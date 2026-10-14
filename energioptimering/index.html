@@ -93,7 +93,7 @@ ul{padding-left:22px}li{margin-bottom:6px}
 .field label,.field legend{display:block;font-weight:700;color:var(--a-navy);font-size:14px;margin-bottom:6px}
 .field .hint{font-size:12px;color:var(--text-light);margin-top:4px}
 fieldset{border:0;padding:0;margin:0}
-select,input[type=number],input[type=text],input[type=email],input[type=tel],textarea{width:100%;font:inherit;font-size:15px;padding:10px 12px;border:1px solid #b9bfc7;border-radius:3px;background:#fff;color:var(--text)}
+select,input[type=number],input[type=text],input[type=search],input[type=email],input[type=tel],textarea{width:100%;font:inherit;font-size:15px;padding:10px 12px;border:1px solid #b9bfc7;border-radius:3px;background:#fff;color:var(--text)}
 select:focus,input:focus,textarea:focus{outline:2px solid var(--a-blue);outline-offset:0;border-color:var(--a-blue)}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .symptoms{display:grid;gap:8px}
@@ -198,6 +198,29 @@ details p{padding:0 20px 18px;margin:0;color:var(--text-light)}
 .edu-more a{color:var(--a-yellow);font-weight:700}
 @media (max-width:560px){.gloss dl{grid-template-columns:1fr;gap:2px}.gloss dd{margin-bottom:8px}}
 
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pg{margin-top:48px;padding-top:40px;border-top:1px solid rgba(255,255,255,.15)}
+.pg h3{color:#fff;font-size:24px;text-transform:uppercase;font-weight:900}
+.pg-lead{color:rgba(255,255,255,.85)}
+.pg-tools{display:grid;gap:14px;margin:8px 0 12px}
+.pg-tools input{max-width:420px;border:0}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{font:inherit;font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer}
+.chips button[aria-pressed=true]{background:var(--a-yellow);border-color:var(--a-yellow);color:var(--a-navy)}
+.chips button span{opacity:.7;font-weight:600;margin-left:4px}
+.pg-count{font-size:13px;color:rgba(255,255,255,.7);margin:0 0 14px}
+.pg-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.pc{background:var(--surface);color:var(--text);border-radius:4px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.pc-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.pc h4{margin:0;font-size:16px;overflow-wrap:break-word;color:var(--a-navy);font-family:"Montserrat",sans-serif;line-height:1.3}
+.pc .cat{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--a-blue)}
+.pc p{margin:0;font-size:14px;line-height:1.5}
+.pc .when{color:var(--text-light)}
+.pc .when b{color:var(--a-navy)}
+.pc .pk{flex:none;font-size:11px;font-weight:800;padding:3px 8px;border-radius:2px;white-space:nowrap}
+.pk.p1{background:var(--a-yellow);color:var(--a-navy)}.pk.p2{background:var(--blue-bg);color:var(--a-blue)}.pk.later{background:var(--bg);color:var(--text-light)}
+.pc a{margin-top:auto;padding-top:6px;font-size:13px;font-weight:700}
+.pg-empty{color:rgba(255,255,255,.85)}
 /* Kontakt */
 .contact{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:start}
 .contact form{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--a-yellow);border-radius:4px;padding:28px;display:grid;gap:16px}
@@ -424,7 +447,7 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
 <section id="utbildning" class="edu">
   <div class="wrap">
     <h2>Kunskapsbank</h2>
-    <p class="lead">Kort och konkret om tekniken bakom en energieffektiv fastighet. Välj ett ämne.</p>
+    <p class="lead">Kort och konkret om tekniken bakom en energieffektiv fastighet. Välj ett ämne – eller gå direkt till <a href="#produkter" style="color:var(--a-yellow);font-weight:700">produktguiden</a>.</p>
     <div class="tabs" role="tablist" aria-label="Ämnen"><button role="tab" id="kt-termo" aria-controls="k-termo" aria-selected="true">Termostater &amp; radiatorer</button><button role="tab" id="kt-injust" aria-controls="k-injust" aria-selected="false" tabindex="-1">Injustering</button><button role="tab" id="kt-fjv" aria-controls="k-fjv" aria-selected="false" tabindex="-1">Fjärrvärme</button><button role="tab" id="kt-vp" aria-controls="k-vp" aria-selected="false" tabindex="-1">Värmepumpar</button><button role="tab" id="kt-vent" aria-controls="k-vent" aria-selected="false" tabindex="-1">Ventilation</button><button role="tab" id="kt-kyla" aria-controls="k-kyla" aria-selected="false" tabindex="-1">Kyla</button><button role="tab" id="kt-klimat" aria-controls="k-klimat" aria-selected="false" tabindex="-1">Inomhusklimat</button><button role="tab" id="kt-vv" aria-controls="k-vv" aria-selected="false" tabindex="-1">Varmvatten</button><button role="tab" id="kt-epbd" aria-controls="k-epbd" aria-selected="false" tabindex="-1">EPBD &amp; regler</button></div>
     <div class="panel" role="tabpanel" id="k-termo" aria-labelledby="kt-termo">
       <div>
@@ -551,6 +574,17 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
         <p>ska alla nya byggnader i EU vara nollutsläppsbyggnader.</p>
         <p class="src">Källa: EPBD (EU) 2024/1275. Svensk tillämpning kan skilja sig i detaljer – se även <a href="#regler">Regler</a>.</p>
       </aside>
+    </div>
+    <div class="pg" id="produkter">
+      <h3>Produktguide</h3>
+      <p class="pg-lead">Vad gör produkten, och när lönar den sig? Sök eller filtrera på område.</p>
+      <div class="pg-tools">
+        <label class="vh" for="pg-q">Sök produkt</label>
+        <input type="search" id="pg-q" placeholder="Sök, t.ex. pump, filter eller givare">
+        <div class="chips" id="pg-chips" role="group" aria-label="Filtrera på område"></div>
+      </div>
+      <p class="pg-count" id="pg-count" aria-live="polite"></p>
+      <div class="pg-grid" id="pg-grid"></div>
     </div>
     <details class="gloss"><summary>Ordlista</summary>
       <dl>
@@ -836,7 +870,7 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
   <div class="wrap">
     <div class="cols">
       <div><h4>Åtgärdspaket</h4><ul><li><a href="#paket">Värmesystem &amp; styrning</a></li><li><a href="#paket">Ventilation</a></li></ul></div>
-      <div><h4>Verktyg</h4><ul><li><a href="#snabbkoll">Snabbkoll</a></li><li><a href="#regler">Regelöversikt</a></li><li><a href="#utbildning">Kunskapsbank</a></li><li><a href="#faq">Vanliga frågor</a></li></ul></div>
+      <div><h4>Verktyg</h4><ul><li><a href="#snabbkoll">Snabbkoll</a></li><li><a href="#regler">Regelöversikt</a></li><li><a href="#utbildning">Kunskapsbank</a></li><li><a href="#produkter">Produktguide</a></li><li><a href="#faq">Vanliga frågor</a></li></ul></div>
       <div><h4>För dig som är</h4><ul><li><a href="#for-dig">Bostadsrättsförening</a></li><li><a href="#for-dig">Privat hyresvärd</a></li><li><a href="#for-dig">Allmännytta</a></li><li><a href="#for-dig">Kommersiell fastighetsägare</a></li></ul></div>
       <div><h4>Kom igång</h4><ul><li><a href="#kontakt">Boka kostnadsfri screening</a></li><li><a href="#leasing">Leasing</a></li><li><a href="#showroom">Showroom &amp; utbildning</a></li></ul></div>
     </div>
@@ -961,6 +995,89 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
       '<br>Värmepumpen är billigast så länge elpriset ligger under <strong>' + dec.format(be) + ' kr/kWh</strong>.';
   }
   ['k-el','k-cop','k-fv'].forEach(function(id){ $(id).addEventListener('input', vp); }); vp();
+
+  // Produktguide
+  var PK = {p1:'Paket 1', p2:'Paket 2', later:'Kommer senare'};
+  var PRODUCTS = [
+    ['Cirkulationspump, varvtalsstyrd','Värme','Pumpar runt vattnet i värmesystemet och anpassar varvtalet efter behovet i stället för att gå på fullt hela tiden.','pumpen är äldre än ca 10 år, saknar varvtalsstyrning eller låter.','p1'],
+    ['Injusteringsventil','Värme','Begränsar flödet i en stam eller krets så att varje del av huset får rätt mängd värme.','temperaturen skiljer mellan lägenheter eller stammar.','p1'],
+    ['Tryckoberoende reglerventil (PICV)','Värme','Kombinerar injustering och reglering i en ventil och håller flödet stabilt även när trycket i systemet ändras.','systemet ofta hamnar i obalans eller flödena varierar mycket.','p1'],
+    ['Differenstrycksregulator','Värme','Håller ett jämnt tryck över en stam så att radiatorventilerna arbetar under rätt förutsättningar.','termostaterna susar eller stammar längst bort blir kalla.','p1'],
+    ['Radiatorventil med förinställning','Värme','Ventilen på radiatorn där flödet förinställs vid injusteringen.','ventilerna är gamla, kärvar eller saknar förinställning.','p1'],
+    ['Termostathuvud','Värme','Känner av rumstemperaturen och öppnar eller stänger radiatorventilen automatiskt.','de boende reglerar med fönstret i stället för termostaten.','p1'],
+    ['Uppkopplat termostathuvud','Värme','Termostat som kan styras och följas upp digitalt, t.ex. med schema per rum.','lokaler eller lägenheter används på oregelbundna tider.','p1'],
+    ['Radiator för låg temperatur','Värme','Radiator med större värmeavgivande yta som ger samma värme vid lägre vattentemperatur.','ni byter till värmepump eller vill sänka framledningstemperaturen.','p1'],
+    ['Vattenburen golvvärme','Värme','Värmer rummet underifrån med låg vattentemperatur och ger jämn komfort.','ni renoverar badrum eller bottenvåning.','p1'],
+    ['Fjärrvärmecentral','Värme','Undercentralen där fjärrvärmen överförs till husets radiatorer och varmvatten.','centralen är 20–25 år eller äldre, eller returtemperaturen är hög.','p1'],
+    ['Värmeväxlare','Värme','Överför värme mellan två vätskekretsar utan att de blandas.','växlaren är igensatt, underdimensionerad eller ger dålig avkylning.','p1'],
+    ['Ackumulatortank','Värme','Lagrar värme så att värmekällan kan arbeta jämnt och vid rätt tidpunkt.','ni kombinerar värmekällor eller vill flytta energianvändning i tid.','p1'],
+    ['Expansionskärl och tryckhållning','Värme','Tar upp vattnets volymökning när det värms och håller rätt tryck i systemet.','trycket varierar eller ni ofta behöver fylla på vatten.','p1'],
+    ['Avgasare','Värme','Tar bort luft och mikrobubblor ur systemvattnet.','radiatorer porlar, behöver luftas ofta eller är kalla upptill.','p1'],
+    ['Smutsavskiljare med magnet','Värme','Fångar slam och magnetit som annars sätter igen ventiler, pumpar och växlare.','vattnet är svart eller ventiler och pumpar slits onormalt.','p1'],
+    ['Rörisolering','Värme','Minskar värmeförluster från rör i källare, schakt och vindar.','rör i ouppvärmda utrymmen är oisolerade eller skadade.','p1'],
+    ['Energimätare','Värme','Mäter värmeenergi, flöde och temperaturer i en krets.','ni vill följa upp effekten av åtgärder per byggnad eller krets.','p1'],
+    ['Frånluftsvärmepump','Värmepump','Tar tillvara värmen i husets frånluft och använder den till värme och varmvatten.','huset har mekanisk frånluft och fjärrvärme eller el som värmekälla.','p1'],
+    ['Bergvärmepump','Värmepump','Hämtar värme från berggrunden via borrhål och ger en jämn värmefaktor året runt.','ni har ett stort värmebehov och tomt för borrning.','p1'],
+    ['Luft/vatten-värmepump','Värmepump','Hämtar värme ur uteluften och värmer vattnet i radiatorsystemet.','borrning inte är möjlig eller som komplement till annan värmekälla.','p1'],
+    ['Reglercentral (DUC)','Styrning','Styr värmekurvor, pumpar och ventiler i fastigheten.','styrningen är gammal, manuell eller saknar uppkoppling.','p1'],
+    ['Utegivare och prognosstyrning','Styrning','Styr värmen efter utetemperatur och väderprognos i stället för bara aktuell temperatur.','huset blir för varmt vid soliga dagar eller snabba väderomslag.','p1'],
+    ['Trådlösa inomhusgivare','Styrning','Mäter temperatur, och ibland fukt och koldioxid, i lägenheter och lokaler.','ni vill styra på verklig inomhustemperatur och hitta problem tidigt.','p1'],
+    ['Energiuppföljning och portal','Styrning','Samlar mätdata och visar energi, effekt och larm per byggnad.','ni har flera byggnader eller vill visa resultat för styrelsen.','p1'],
+    ['AI-baserad värmeoptimering','Styrning','Lär sig hur byggnaden reagerar och justerar värmen automatiskt för jämn komfort.','grundsystemet fungerar och ni vill ta nästa steg.','p1'],
+    ['Ställdon och styrventiler','Styrning','Den motoriserade ventil som reglercentralen styr flödet med.','regleringen pendlar eller ventilerna läcker förbi.','p1'],
+    ['FTX-aggregat','Ventilation','Ventilationsaggregat med till- och frånluft som återvinner värmen ur frånluften.','aggregatet är äldre än ca 20 år eller återvinningen fungerar dåligt.','p2'],
+    ['EC-fläktar (retrofit)','Ventilation','Moderna, varvtalsstyrda fläktar som kan bytas in i befintliga aggregat.','aggregatet i övrigt är i gott skick men fläktarna drar mycket el.','p2'],
+    ['Ventilationsfilter','Ventilation','Renar luften och skyddar aggregatet. Rätt filter ger lågt tryckfall och bra luft.','filtren sällan byts eller tryckfallet är högt.','p2'],
+    ['Ventilationskanaler','Ventilation','För luften genom byggnaden. Läckage och smuts ökar energibehovet.','OVK visar läckage, smuts eller felaktiga flöden.','p2'],
+    ['Behovsstyrning','Ventilation','Givare för koldioxid eller närvaro och spjäll som ger luft där och när den behövs.','lokaler används olika mycket under dagen.','p2'],
+    ['Frånluftsfläkt, varvtalsstyrd','Ventilation','Fläkt för hus med enbart frånluft som kan anpassa flödet.','huset har F-ventilation med gamla takfläktar.','p2'],
+    ['Luftdon och injustering','Ventilation','Tilluft- och frånluftsdon som fördelar luften rätt i rummet.','det drar, är instängt eller flödena inte stämmer med OVK.','p2'],
+    ['Kylmaskin eller reversibel värmepump','Kyla','Ger komfortkyla sommartid, och en reversibel värmepump kan även värma.','det blir för varmt sommartid och solavskärmning inte räcker.','later'],
+    ['Fjärrkylacentral','Kyla','Ansluter fastigheten till fjärrkylanätet.','fjärrkyla finns i området och kylbehovet är stort.','later'],
+    ['Utvändig solavskärmning','Kyla','Markiser och utvändiga persienner som stoppar solvärmen innan den når fönstret.','fasader mot söder eller väster blir för varma.','later'],
+    ['Termostatblandare och snålspolande armatur','Vatten','Ger rätt temperatur direkt och mindre varmvatten per minut.','armaturerna är gamla eller varmvattenanvändningen är hög.','later'],
+    ['Individuell mätning (IMD)','Vatten','Mäter varmvatten per lägenhet så att var och en betalar för sin användning.','ni vill ge de boende incitament att spara.','later'],
+    ['VVC-pump','Vatten','Cirkulerar varmvattnet så att det blir varmt direkt och håller legionella borta.','pumpen är gammal eller varmvattnet tar lång tid att komma.','later'],
+    ['Läckagevakt','Vatten','Upptäcker och stänger av vid vattenläckage.','ni vill minska risken för vattenskador.','later'],
+    ['LED-armaturer','Belysning','Belysning som använder betydligt mindre el än äldre ljuskällor och håller längre.','trapphus, källare och garage har äldre armaturer.','later'],
+    ['Närvaro- och dagsljusstyrning','Belysning','Tänder bara när någon är där och dimmar när dagsljuset räcker.','lampor lyser i utrymmen som sällan används.','later'],
+    ['Tilläggsisolering av vind','Klimatskal','Minskar värmeförlusterna genom taket.','vindsbjälklaget har tunn eller sättningsskadad isolering.','later'],
+    ['Energieffektiva fönster','Klimatskal','Fönster eller renovering med bättre glas som minskar värmeförlust och drag.','fönstren ändå ska bytas eller renoveras.','later'],
+    ['Solceller','El','Producerar egen el som kan driva pumpar, fläktar och värmepumpar.','taket har bra läge och ni har jämn elanvändning dagtid.','later'],
+    ['Batterilager','El','Lagrar el så att den kan användas när elen är dyr eller för att kapa effekttoppar.','ni har solceller eller höga effektavgifter.','later']
+  ];
+  var pgCat = 'Alla';
+  var cats = ['Alla'].concat(PRODUCTS.map(function(x){return x[1]}).filter(function(c,i,a){return a.indexOf(c)===i}));
+  var esc = function(t){ return t.replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+  $('pg-chips').innerHTML = cats.map(function(c){
+    var n = c==='Alla' ? PRODUCTS.length : PRODUCTS.filter(function(x){return x[1]===c}).length;
+    return '<button type="button" data-c="' + c + '" aria-pressed="' + (c===pgCat) + '">' + c + '<span>' + n + '</span></button>';
+  }).join('');
+  function pg(){
+    var q = $('pg-q').value.trim().toLowerCase();
+    var list = PRODUCTS.filter(function(x){
+      return (pgCat==='Alla' || x[1]===pgCat) && (!q || (x[0]+' '+x[1]+' '+x[2]+' '+x[3]).toLowerCase().indexOf(q) > -1);
+    });
+    $('pg-count').textContent = 'Visar ' + list.length + ' av ' + PRODUCTS.length + ' produkter';
+    $('pg-grid').innerHTML = list.length ? list.map(function(x){
+      return '<article class="pc"><div class="pc-top"><span class="cat">' + x[1] + '</span><span class="pk ' + x[4] + '">' + PK[x[4]] + '</span></div><h4>' + x[0] + '</h4>' +
+        '<p>' + x[2] + '</p><p class="when"><b>Lönar sig när</b> ' + x[3] + '</p>' +
+        '<a href="#kontakt" data-ask="' + esc(x[0]) + '">Fråga om produkten →</a></article>';
+    }).join('') : '<p class="pg-empty">Ingen produkt matchar sökningen. Prova ett annat ord eller välj Alla.</p>';
+  }
+  $('pg-chips').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    pgCat = b.dataset.c;
+    this.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', x===b); });
+    pg();
+  });
+  $('pg-q').addEventListener('input', pg);
+  $('pg-grid').addEventListener('click', function(e){
+    var a = e.target.closest('a[data-ask]'); if(!a) return;
+    $('c-msg').value = 'Jag vill veta mer om: ' + a.dataset.ask;
+  });
+  pg();
+
 
   // Kontaktformulär – koppla till CRM/backend innan publicering
   $('contactForm').addEventListener('submit', function(e){
