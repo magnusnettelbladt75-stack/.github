@@ -172,6 +172,32 @@ summary{cursor:pointer;padding:16px 20px;font-weight:700;color:var(--a-navy)}
 summary:hover{background:var(--bg)}
 details p{padding:0 20px 18px;margin:0;color:var(--text-light)}
 
+/* Kunskapsbank */
+.edu{background:var(--a-navy);color:#fff}
+.edu h2{color:#fff}.edu .lead{color:rgba(255,255,255,.85)}
+.edu .tabs button{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)}
+.edu .tabs button[aria-selected=true]{background:var(--surface);color:var(--a-navy);border-color:var(--surface)}
+.edu .panel{color:var(--text);border-top-color:var(--a-yellow)}
+.edu .panel p{max-width:62ch}
+.dyk{border-left:6px solid var(--a-yellow)}
+.dyk-n{display:block;font-family:"Montserrat",sans-serif;font-weight:900;font-size:clamp(30px,4vw,42px);line-height:1.1;color:var(--a-blue);margin-bottom:6px;font-variant-numeric:tabular-nums}
+.dyk-n:empty{display:none}
+.dyk p{font-size:15px}
+.dyk .src{font-size:12px;color:var(--text-light);margin:12px 0 0}
+.sl{display:block;font-weight:700;color:var(--a-navy);font-size:14px;margin-top:8px}
+.dyk input[type=range]{width:100%;accent-color:var(--a-blue)}
+.sl-res{font-weight:600;color:var(--a-navy);margin:8px 0 0}
+.sl-res strong{color:var(--a-blue);font-size:20px}
+.mini{display:grid;grid-template-columns:1fr 96px;gap:8px 12px;align-items:center;font-size:13px;margin-top:6px}
+.mini label{font-weight:600;color:var(--a-navy)}
+.mini input{padding:6px 8px;font-size:14px}
+.gloss{margin-top:24px}
+.gloss dl{display:grid;grid-template-columns:max-content 1fr;gap:8px 20px;padding:0 20px 20px;margin:0;font-size:15px}
+.gloss dt{font-weight:700;color:var(--a-navy)}.gloss dd{margin:0;color:var(--text-light)}
+.edu-more{margin:20px 0 0;color:rgba(255,255,255,.85)}
+.edu-more a{color:var(--a-yellow);font-weight:700}
+@media (max-width:560px){.gloss dl{grid-template-columns:1fr;gap:2px}.gloss dd{margin-bottom:8px}}
+
 /* Kontakt */
 .contact{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:start}
 .contact form{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--a-yellow);border-radius:4px;padding:28px;display:grid;gap:16px}
@@ -219,6 +245,7 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
         <a href="#varfor">Varför nu</a>
         <a href="#snabbkoll">Snabbkoll</a>
         <a href="#paket">Paket</a>
+        <a href="#utbildning">Utbildning</a>
         <a href="#process">Så går det till</a>
         <a href="#leasing">Leasing</a>
         <a href="#showroom">Showroom</a>
@@ -390,6 +417,155 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
     </div>
     <p class="later"><strong>Kommer senare:</strong> vatteneffektivisering, belysning, isolering och klimatskal.</p>
     <div class="note"><p><strong>Exempel från verkligheten:</strong> I ett publicerat svenskt flerbostadscase minskade värmeanvändningen med 10,9 % efter digital värmestyrning och ytterligare 10,2 % efter dynamisk injustering. Det visar vad som är möjligt i en byggnad – inte vad varje byggnad garanterat uppnår. Därför mäter vi alltid före och efter.</p></div>
+  </div>
+</section>
+
+<!-- UTBILDNING -->
+<section id="utbildning" class="edu">
+  <div class="wrap">
+    <h2>Kunskapsbank</h2>
+    <p class="lead">Kort och konkret om tekniken bakom en energieffektiv fastighet. Välj ett ämne.</p>
+    <div class="tabs" role="tablist" aria-label="Ämnen"><button role="tab" id="kt-termo" aria-controls="k-termo" aria-selected="true">Termostater &amp; radiatorer</button><button role="tab" id="kt-injust" aria-controls="k-injust" aria-selected="false" tabindex="-1">Injustering</button><button role="tab" id="kt-fjv" aria-controls="k-fjv" aria-selected="false" tabindex="-1">Fjärrvärme</button><button role="tab" id="kt-vp" aria-controls="k-vp" aria-selected="false" tabindex="-1">Värmepumpar</button><button role="tab" id="kt-vent" aria-controls="k-vent" aria-selected="false" tabindex="-1">Ventilation</button><button role="tab" id="kt-kyla" aria-controls="k-kyla" aria-selected="false" tabindex="-1">Kyla</button><button role="tab" id="kt-klimat" aria-controls="k-klimat" aria-selected="false" tabindex="-1">Inomhusklimat</button><button role="tab" id="kt-vv" aria-controls="k-vv" aria-selected="false" tabindex="-1">Varmvatten</button><button role="tab" id="kt-epbd" aria-controls="k-epbd" aria-selected="false" tabindex="-1">EPBD &amp; regler</button></div>
+    <div class="panel" role="tabpanel" id="k-termo" aria-labelledby="kt-termo">
+      <div>
+        <h3>Termostater &amp; radiatorer</h3>
+        <p>Termostatventilen känner av rumstemperaturen och stryper flödet när solen, människor eller matlagning värmer rummet. Ventiler som är äldre än ca 20 år kärvar ofta eller har fel förinställning, och då blir radiatorn antingen kall eller för varm.</p>
+        <ul class="check"><li>Möblera inte framför radiatorn och dra inte gardiner över termostaten</li><li>Byt gamla ventiler i samband med injustering, inte separat</li><li>Förinställ ventilerna enligt injusteringsprotokollet</li><li>Lufta radiatorer som porlar eller är kalla upptill</li></ul>
+      </div>
+      <aside class="dyk">
+        <h4>Visste du att …</h4>
+        <b class="dyk-n">≈ 5 %</b>
+        <p>minskar värmebehovet för varje grad lägre inomhustemperatur.</p>
+        <label class="sl" for="k-deg">Sänk med <output id="k-degOut">1</output> °C</label>
+        <input type="range" id="k-deg" min="0" max="3" step="0.5" value="1">
+        <p class="sl-res">≈ <strong id="k-degRes">5</strong> % lägre värmebehov</p>
+        <p class="src">Källa: Energimyndigheten, tumregel. Effekten varierar med byggnad och klimat.</p>
+      </aside>
+    </div>
+    <div class="panel" role="tabpanel" id="k-injust" aria-labelledby="kt-injust" hidden>
+      <div>
+        <h3>Injustering</h3>
+        <p>Injustering betyder att varje radiator får rätt flöde. I ett obalanserat system blir lägenheterna nära undercentralen för varma och de längst bort för kalla. Då höjs framledningstemperaturen för hela huset för att de kallaste ska bli nöjda – och alla andra vädrar bort värmen.</p>
+        <ul class="check"><li>Moderna tryckoberoende ventiler håller balansen även när flödena ändras</li><li>Gör injusteringen efter pump- och ventilbyten, inte före</li><li>Dokumentera injusteringen så att den kan följas upp</li><li>Kombinera med sänkt framledningstemperatur för full effekt</li></ul>
+      </div>
+      <aside class="dyk">
+        <h4>Visste du att …</h4>
+        <b class="dyk-n">5–10 %</b>
+        <p>lägre värmeanvändning är ett vanligt erfarenhetsvärde efter en ordentlig injustering med moderna injusteringsventiler. I ett publicerat svenskt case gav dynamisk injustering 10,2 %.</p>
+        <p class="src">Källa: branschens erfarenhetsvärden och publicerat leverantörscase. Verifieras per byggnad.</p>
+      </aside>
+    </div>
+    <div class="panel" role="tabpanel" id="k-fjv" aria-labelledby="kt-fjv" hidden>
+      <div>
+        <h3>Fjärrvärme</h3>
+        <p>Fjärrvärme värmer de flesta flerbostadshus i Sverige. I undercentralen överförs värmen via värmeväxlare till husets radiatorkrets och varmvatten. Hur väl huset kyler av fjärrvärmevattnet – returtemperaturen – påverkar både nätet och ofta er faktura.</p>
+        <ul class="check"><li>Låg returtemperatur är ett tecken på ett välfungerande system</li><li>Många bolag tar betalt för effekt – att kapa topparna sänker kostnaden</li><li>Kontrollera om ert bolag har flödes- eller returtemperaturavgift</li><li>Se över värmeväxlare och reglerutrustning i undercentralen</li></ul>
+      </div>
+      <aside class="dyk">
+        <h4>Visste du att …</h4>
+        <b class="dyk-n">1 276 kr</b>
+        <p>per MWh var snittpriset på fjärrvärme 2026 för större flerfamiljshus, 4,6 % högre än 2025. Skillnaden mellan lokala nät är stor.</p>
+        <p class="src">Källa: Energiföretagen, prisundersökning 2026.</p>
+      </aside>
+    </div>
+    <div class="panel" role="tabpanel" id="k-vp" aria-labelledby="kt-vp" hidden>
+      <div>
+        <h3>Värmepumpar</h3>
+        <p>En värmepump flyttar värme i stället för att skapa den. Värmefaktorn (COP) anger hur många kWh värme du får per kWh el. En värmepump kan också kombineras med fjärrvärme: värmepumpen tar t.ex. värmen ur frånluften, och fjärrvärmen tar topparna.</p>
+        <ul class="check"><li>Styr värmepumpen efter elpriset: kör den när elen är billig, låt fjärrvärmen ta över när den är dyr</li><li>Kontrollera fjärrvärmeavtalet – effekt- och flödesavgifter påverkar kalkylen</li><li>Låg framledningstemperatur ger högre COP</li><li>Räkna på hela året, inte bara på en billig timme</li></ul>
+      </div>
+      <aside class="dyk">
+        <h4>Visste du att …</h4>
+        <b class="dyk-n"></b>
+        <p>När elen är billig blir värmen från värmepumpen billigare än fjärrvärmen. Räkna på er egen brytpunkt:</p>
+        <div class="mini">
+          <label for="k-el">Elpris inkl. nät och skatt, kr/kWh</label><input type="number" id="k-el" value="1.20" step="0.05" min="0" inputmode="decimal">
+          <label for="k-cop">Värmefaktor (COP)</label><input type="number" id="k-cop" value="3" step="0.1" min="1" inputmode="decimal">
+          <label for="k-fv">Fjärrvärmepris, kr/kWh</label><input type="number" id="k-fv" value="1.28" step="0.01" min="0" inputmode="decimal">
+        </div>
+        <p class="sl-res" id="k-vpRes"></p>
+        <p class="src">Förenklad kalkyl per kWh värme. Investering, effektavgifter och service ingår inte.</p>
+      </aside>
+    </div>
+    <div class="panel" role="tabpanel" id="k-vent" aria-labelledby="kt-vent" hidden>
+      <div>
+        <h3>Ventilation</h3>
+        <p>Ventilationen ska ge bra luft – men fläktarna drar el och luften som blåses ut tar med sig värme. Ett FTX-aggregat återvinner värmen ur frånluften. Drifttider, flöden och filter avgör hur mycket energi det kostar.</p>
+        <ul class="check"><li>Anpassa drifttiderna efter när lokalerna faktiskt används</li><li>Byt filter i tid – igensatta filter ökar fläktens effekt</li><li>Kontrollera att värmeåtervinningen fungerar som den ska</li><li>Använd OVK-protokollet som underlag för åtgärder</li></ul>
+      </div>
+      <aside class="dyk">
+        <h4>Visste du att …</h4>
+        <b class="dyk-n">≈ 4 %</b>
+        <p>lägre driftenergi för fläktarna per timme kortare drifttid per dygn (1 av 24 timmar), utan att något annat ändras.</p>
+        <p class="src">Räkneexempel. Faktisk besparing beror på aggregat och styrning.</p>
+      </aside>
+    </div>
+    <div class="panel" role="tabpanel" id="k-kyla" aria-labelledby="kt-kyla" hidden>
+      <div>
+        <h3>Kyla</h3>
+        <p>Värmeböljorna blir fler och kylbehovet växer, även i bostäder. Den billigaste kylan är den värme som aldrig kommer in. Därefter kommer frikyla, fjärrkyla och värmepumpar som både kan värma och kyla.</p>
+        <ul class="check"><li>Börja med solavskärmning och vädringsstrategi</li><li>Utvändig solavskärmning stoppar mer solvärme än invändig</li><li>Värmepumpar som kan köra kyla kan ge komfortkyla sommartid</li><li>Undvik att värme och kyla motarbetar varandra i styrningen</li></ul>
+      </div>
+      <aside class="dyk">
+        <h4>Visste du att …</h4>
+        <b class="dyk-n">Utsidan</b>
+        <p>är bästa platsen för solskydd. Markiser och utvändiga persienner stoppar solvärmen innan den når glaset.</p>
+        <p class="src">Källa: allmän byggnadsfysik.</p>
+      </aside>
+    </div>
+    <div class="panel" role="tabpanel" id="k-klimat" aria-labelledby="kt-klimat" hidden>
+      <div>
+        <h3>Inomhusklimat</h3>
+        <p>Energibesparing får aldrig ske på bekostnad av inomhusklimatet. Temperatur, drag, luftkvalitet och fukt avgör hur de boende mår – och hur många felanmälningar ni får.</p>
+        <ul class="check"><li>Mät inomhustemperaturen i flera lägenheter, inte bara en</li><li>Följ upp koldioxid som mått på luftkvalitet</li><li>Drag och kalla ytor upplevs ofta som för låg temperatur</li><li>Gör en baslinje för komforten innan ni ändrar något</li></ul>
+      </div>
+      <aside class="dyk">
+        <h4>Visste du att …</h4>
+        <b class="dyk-n">20–23 °C</b>
+        <p>är Folkhälsomyndighetens rekommenderade operativa temperatur i bostäder. Den bör inte understiga 18 °C.</p>
+        <p class="src">Källa: Folkhälsomyndighetens allmänna råd om temperatur inomhus.</p>
+      </aside>
+    </div>
+    <div class="panel" role="tabpanel" id="k-vv" aria-labelledby="kt-vv" hidden>
+      <div>
+        <h3>Varmvatten</h3>
+        <p>Varmvatten är en stor och ofta förbisedd del av värmeanvändningen. Varmvattencirkulationen (VVC) gör att vattnet blir varmt direkt i kranen, men kostar energi dygnet runt.</p>
+        <ul class="check"><li>Isolera VVC-ledningar och kontrollera VVC-pumpen</li><li>Snålspolande armaturer minskar både vatten och värme</li><li>Individuell mätning och debitering ger ofta lägre användning</li><li>Håll temperaturen för att undvika legionella</li></ul>
+      </div>
+      <aside class="dyk">
+        <h4>Visste du att …</h4>
+        <b class="dyk-n">60 °C</b>
+        <p>ska varmvattnet hålla i beredaren och minst 50 °C vid tappstället, för att förebygga legionella.</p>
+        <p class="src">Källa: Boverkets byggregler.</p>
+      </aside>
+    </div>
+    <div class="panel" role="tabpanel" id="k-epbd" aria-labelledby="kt-epbd" hidden>
+      <div>
+        <h3>EPBD &amp; regler</h3>
+        <p>EU:s omarbetade byggnadsdirektiv (EPBD) sätter ramarna för hela beståndets energiprestanda fram till 2050. Sverige införlivar direktivet i svensk lag, och nya regler om energideklarationer gäller från 1 oktober 2026.</p>
+        <ul class="check"><li>Bostäder: genomsnittlig primärenergi i beståndet ska ned 16 % till 2030 och 20–22 % till 2035</li><li>Lokaler: de 16 % sämsta ska förbättras till 2030 och de 26 % sämsta till 2033</li><li>Nya byggnader ska vara nollutsläppsbyggnader – offentliga från 2028, övriga från 2030</li><li>Fossila pannor ska fasas ut senast 2040</li></ul>
+      </div>
+      <aside class="dyk">
+        <h4>Visste du att …</h4>
+        <b class="dyk-n">2030</b>
+        <p>ska alla nya byggnader i EU vara nollutsläppsbyggnader.</p>
+        <p class="src">Källa: EPBD (EU) 2024/1275. Svensk tillämpning kan skilja sig i detaljer – se även <a href="#regler">Regler</a>.</p>
+      </aside>
+    </div>
+    <details class="gloss"><summary>Ordlista</summary>
+      <dl>
+        <dt>ΔT (delta-T)</dt><dd>Skillnaden mellan fram- och returtemperatur. Stor ΔT betyder att värmen tas tillvara.</dd>
+        <dt>COP</dt><dd>Värmefaktor. Hur många kWh värme en värmepump ger per kWh el.</dd>
+        <dt>Undercentral</dt><dd>Där fjärrvärmen överförs till husets radiatorer och varmvatten.</dd>
+        <dt>Injustering</dt><dd>Att ställa in flödet så att varje radiator får rätt mängd värme.</dd>
+        <dt>Normalårskorrigering</dt><dd>Omräkning av energianvändningen till ett normalt år, så att varma och kalla år kan jämföras.</dd>
+        <dt>Atemp</dt><dd>Den golvarea som värms till mer än 10 °C. Används i energideklarationen.</dd>
+        <dt>SFP</dt><dd>Specifik fläkteffekt. Hur mycket el fläktarna använder per flyttad luftmängd.</dd>
+        <dt>OVK</dt><dd>Obligatorisk ventilationskontroll.</dd>
+        <dt>EPBD</dt><dd>EU:s direktiv om byggnaders energiprestanda.</dd>
+      </dl>
+    </details>
+    <p class="edu-more">Vill du lära dig mer på plats? Vi planerar <a href="#showroom">utbildningscenter</a> med kurser för fastighetskunder och installatörer.</p>
   </div>
 </section>
 
@@ -660,7 +836,7 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
   <div class="wrap">
     <div class="cols">
       <div><h4>Åtgärdspaket</h4><ul><li><a href="#paket">Värmesystem &amp; styrning</a></li><li><a href="#paket">Ventilation</a></li></ul></div>
-      <div><h4>Verktyg</h4><ul><li><a href="#snabbkoll">Snabbkoll</a></li><li><a href="#regler">Regelöversikt</a></li><li><a href="#faq">Vanliga frågor</a></li></ul></div>
+      <div><h4>Verktyg</h4><ul><li><a href="#snabbkoll">Snabbkoll</a></li><li><a href="#regler">Regelöversikt</a></li><li><a href="#utbildning">Kunskapsbank</a></li><li><a href="#faq">Vanliga frågor</a></li></ul></div>
       <div><h4>För dig som är</h4><ul><li><a href="#for-dig">Bostadsrättsförening</a></li><li><a href="#for-dig">Privat hyresvärd</a></li><li><a href="#for-dig">Allmännytta</a></li><li><a href="#for-dig">Kommersiell fastighetsägare</a></li></ul></div>
       <div><h4>Kom igång</h4><ul><li><a href="#kontakt">Boka kostnadsfri screening</a></li><li><a href="#leasing">Leasing</a></li><li><a href="#showroom">Showroom &amp; utbildning</a></li></ul></div>
     </div>
@@ -742,27 +918,49 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
   form.addEventListener('submit', function(e){ e.preventDefault(); });
   calc();
 
-  // Flikar
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role=tab]'));
-  function select(t){
-    tabs.forEach(function(x){
-      var on = x===t;
-      x.setAttribute('aria-selected', on);
-      x.tabIndex = on ? 0 : -1;
-      $(x.getAttribute('aria-controls')).hidden = !on;
-    });
-  }
-  tabs.forEach(function(t,i){
-    t.addEventListener('click', function(){ select(t); });
-    t.addEventListener('keydown', function(e){
-      var d = e.key==='ArrowRight' ? 1 : e.key==='ArrowLeft' ? -1 : 0;
-      if(!d) return;
-      var n = tabs[(i+d+tabs.length)%tabs.length]; select(n); n.focus();
+  // Flikar – varje tablist hanteras för sig
+  document.querySelectorAll('[role=tablist]').forEach(function(list){
+    var tabs = Array.prototype.slice.call(list.querySelectorAll('[role=tab]'));
+    function select(t){
+      tabs.forEach(function(x){
+        var on = x===t;
+        x.setAttribute('aria-selected', on);
+        x.tabIndex = on ? 0 : -1;
+        $(x.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click', function(){ select(t); });
+      t.addEventListener('keydown', function(e){
+        var d = e.key==='ArrowRight' ? 1 : e.key==='ArrowLeft' ? -1 : 0;
+        if(!d) return;
+        var n = tabs[(i+d+tabs.length)%tabs.length]; select(n); n.focus();
+      });
     });
   });
   // Förval av segment i formuläret utifrån vald flik
   var segMap = {'t-brf':0,'t-priv':1,'t-allm':2,'t-kom':3};
-  tabs.forEach(function(t){ t.addEventListener('click', function(){ $('c-seg').selectedIndex = segMap[t.id]; }); });
+  Object.keys(segMap).forEach(function(id){ $(id).addEventListener('click', function(){ $('c-seg').selectedIndex = segMap[id]; }); });
+
+  // Kunskapsbank: termostatreglage
+  var dec = new Intl.NumberFormat('sv-SE',{maximumFractionDigits:2, minimumFractionDigits:2});
+  function deg(){
+    var d = +$('k-deg').value;
+    $('k-degOut').textContent = String(d).replace('.', ',');
+    $('k-degRes').textContent = String(Math.round(d*5*10)/10).replace('.', ',');
+  }
+  $('k-deg').addEventListener('input', deg); deg();
+
+  // Kunskapsbank: värmepump mot fjärrvärme
+  function vp(){
+    var el = +$('k-el').value, cop = +$('k-cop').value, fv = +$('k-fv').value;
+    if(!(cop > 0) || !(fv > 0)){ $('k-vpRes').textContent = 'Fyll i värmefaktor och fjärrvärmepris.'; return; }
+    var cost = el/cop, be = fv*cop, diff = 1 - cost/fv;
+    $('k-vpRes').innerHTML = 'Värme från värmepumpen kostar <strong>' + dec.format(cost) + ' kr/kWh</strong>' +
+      (diff > 0 ? ', ' + Math.round(diff*100) + ' % billigare än fjärrvärmen.' : ', dyrare än fjärrvärmen just nu.') +
+      '<br>Värmepumpen är billigast så länge elpriset ligger under <strong>' + dec.format(be) + ' kr/kWh</strong>.';
+  }
+  ['k-el','k-cop','k-fv'].forEach(function(id){ $(id).addEventListener('input', vp); }); vp();
 
   // Kontaktformulär – koppla till CRM/backend innan publicering
   $('contactForm').addEventListener('submit', function(e){
