@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Energioptimering för fastighetsägare</title>
-<meta name="description" content="Sänk värmekostnaden i flerbostadshus och lokaler. Kostnadsfri screening, tre tydliga åtgärdspaket och uppföljning med verifierad baslinje.">
+<meta name="description" content="Sänk värmekostnaden i flerbostadshus och lokaler. Kostnadsfri screening, två tydliga åtgärdspaket och uppföljning med verifierad baslinje.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
@@ -115,6 +115,7 @@ select:focus,input:focus,textarea:focus{outline:2px solid var(--a-blue);outline-
 .small{font-size:12px;opacity:.75;line-height:1.5;margin:0}
 
 /* Paket */
+.later{margin:20px 0 0;color:var(--text-light);font-size:15px}
 .pkg .in{gap:4px}
 .pkg h3{font-size:21px}
 .pkg .for{font-size:14px;color:var(--text-light);margin-bottom:12px}
@@ -320,14 +321,14 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
         <fieldset class="field">
           <legend>Känner ni igen något av detta?</legend>
           <div class="symptoms">
-            <label><input type="checkbox" data-p="A"> Ojämna temperaturer eller återkommande klagomål på kyla/värme<span class="tag">A</span></label>
-            <label><input type="checkbox" data-p="A"> Cirkulationspumpar äldre än ca 10 år eller utan varvtalsstyrning<span class="tag">A</span></label>
-            <label><input type="checkbox" data-p="A"> Gamla radiatorventiler, ljud eller luft i systemet<span class="tag">A</span></label>
-            <label><input type="checkbox" data-p="A"> Hög returtemperatur eller avgift för dålig avkylning<span class="tag">A</span></label>
-            <label><input type="checkbox" data-p="B"> Värmekurvan ställs manuellt, inga inomhusgivare<span class="tag">B</span></label>
-            <label><input type="checkbox" data-p="B"> Ingen löpande uppföljning av energi per månad<span class="tag">B</span></label>
-            <label><input type="checkbox" data-p="C"> FTX/FT-aggregat äldre än ca 20 år eller går dygnet runt<span class="tag">C</span></label>
-            <label><input type="checkbox" data-p="C"> Anmärkning eller energisparförslag i senaste OVK<span class="tag">C</span></label>
+            <label><input type="checkbox" data-p="1"> Ojämna temperaturer eller återkommande klagomål på kyla/värme<span class="tag">1</span></label>
+            <label><input type="checkbox" data-p="1"> Cirkulationspumpar äldre än ca 10 år eller utan varvtalsstyrning<span class="tag">1</span></label>
+            <label><input type="checkbox" data-p="1"> Gamla radiatorventiler, ljud eller luft i systemet<span class="tag">1</span></label>
+            <label><input type="checkbox" data-p="1"> Hög returtemperatur eller avgift för dålig avkylning<span class="tag">1</span></label>
+            <label><input type="checkbox" data-p="1"> Värmekurvan ställs manuellt, inga inomhusgivare<span class="tag">1</span></label>
+            <label><input type="checkbox" data-p="1"> Ingen löpande uppföljning av energi per månad<span class="tag">1</span></label>
+            <label><input type="checkbox" data-p="2"> FTX/FT-aggregat äldre än ca 20 år eller går dygnet runt<span class="tag">2</span></label>
+            <label><input type="checkbox" data-p="2"> Anmärkning eller energisparförslag i senaste OVK<span class="tag">2</span></label>
           </div>
         </fieldset>
       </form>
@@ -349,7 +350,7 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
           <ol class="prio" id="rPrio"></ol>
         </div>
         <a class="btn y" href="#kontakt" id="rCta">Boka kostnadsfri screening</a>
-        <p class="small">Indikativt räknat på schablonintervall per paket (A 4–10 %, B 3–8 %, C 2–6 % av värmen) som justeras efter era svar. Det är ett prioriteringsstöd, inte en offert eller garanti – verklig effekt beror på systemet och fastställs först mot en uppmätt, normalårskorrigerad baslinje.</p>
+        <p class="small">Indikativt räknat på schablonintervall per paket (paket 1: 5–15 %, paket 2: 2–6 % av värmen) som justeras efter era svar. Det är ett prioriteringsstöd, inte en offert eller garanti – verklig effekt beror på systemet och fastställs först mot en uppmätt, normalårskorrigerad baslinje.</p>
       </div>
     </div>
   </div>
@@ -358,40 +359,33 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
 <!-- PAKET -->
 <section id="paket">
   <div class="wrap">
-    <h2>Tre paket – i rätt ordning</h2>
-    <p class="lead">Smart styrning på ett obalanserat system optimerar fel sak. Därför börjar vi med hydrauliken, lägger styrning ovanpå och tar ventilationen när grunden sitter.</p>
+    <h2>Två paket – värme först</h2>
+    <p class="lead">Vi börjar där behovet återkommer oftast: värmesystemet och styrningen av det. När grunden sitter tar vi ventilationen. Fler områden tillkommer senare.</p>
     <div class="grid">
       <div class="tile y pkg"><div class="bar"></div><div class="in">
-        <span class="badge y">Paket A · Grunden</span>
-        <h3>Värmebalans &amp; cirkulation</h3>
-        <div class="for">Bäst för fjärrvärmda flerbostadshus från 1950–1980.</div>
+        <span class="badge y">Paket 1 · Grunden</span>
+        <h3>Värmesystem &amp; styrning</h3>
+        <div class="for">Bäst för fjärrvärmda flerbostadshus från 1950–1980 och andra standardiserade bestånd.</div>
         <h4>Vi letar efter</h4>
-        <ul><li>Stor temperaturspridning mellan lägenheter</li><li>Hög returtemperatur, dålig avkylning (ΔT)</li><li>Pumpar utan modern varvtalsstyrning</li><li>Gamla ventiler, luft och smuts i systemet</li></ul>
-        <h4>Åtgärder</h4>
-        <ul><li>Nya cirkulationspumpar</li><li>Injustering, injusterings- och DP-ventiler</li><li>Radiatorventiler och termostater</li><li>Avgasning, smutsavskiljning, tryckhållning</li></ul>
-        <div class="gain">Jämnare komfort, färre klagomål, lägre pumpel och bättre avkylning mot fjärrvärmenätet.</div>
+        <ul><li>Stor temperaturspridning och återkommande klagomål</li><li>Hög returtemperatur, dålig avkylning (ΔT)</li><li>Gamla pumpar, ventiler, luft och smuts i systemet</li><li>Manuellt inställda värmekurvor och ingen uppföljning</li></ul>
+        <h4>Värmesystemet</h4>
+        <ul><li>Fjärrvärmecentraler, värmeväxlare och värmekällor</li><li>Cirkulationspumpar och injustering</li><li>Radiatorer, ventiler och termostater</li><li>Ackumulatortankar och expansionskärl</li></ul>
+        <h4>Styrning &amp; automation</h4>
+        <ul><li>Styr- och reglerteknik</li><li>Sensorer och inomhusgivare</li><li>Uppkopplade lösningar med larm och energiuppföljning</li><li>Enklare AI-baserad optimering</li></ul>
+        <div class="gain">Jämnare komfort, färre klagomål, lägre energikostnad och bättre avkylning mot fjärrvärmenätet.</div>
       </div></div>
       <div class="tile pkg"><div class="bar"></div><div class="in">
-        <span class="badge">Paket B · Styrningen</span>
-        <h3>Smart värmestyrning &amp; uppföljning</h3>
-        <div class="for">När hydrauliken och givarna är kontrollerade.</div>
-        <h4>Vi letar efter</h4>
-        <ul><li>Manuellt inställda värmekurvor</li><li>Inga inomhusgivare eller larm</li><li>Ingen månatlig energiuppföljning</li></ul>
-        <h4>Åtgärder</h4>
-        <ul><li>Inomhusgivare samt fram- och returtemperatur</li><li>Uppkoppling mot befintlig reglercentral eller gateway</li><li>Väder- och prognosstyrning med larm</li><li>Baslinje, normalårskorrigering och månadsrapport</li></ul>
-        <div class="gain">Rätt temperatur i rätt tid, avvikelser som syns direkt och besparingar ni kan visa styrelsen.</div>
-      </div></div>
-      <div class="tile pkg"><div class="bar"></div><div class="in">
-        <span class="badge">Paket C · Luften</span>
-        <h3>Ventilation Performance Check</h3>
+        <span class="badge">Paket 2 · Luften</span>
+        <h3>Ventilation</h3>
         <div class="for">Byggnader med FTX/FT eller anmärkning i OVK.</div>
         <h4>Vi letar efter</h4>
-        <ul><li>Onödigt långa drifttider</li><li>Låg temperaturverkningsgrad i återvinningen</li><li>Hög fläkteffekt (SFP), slitna remmar och filter</li></ul>
-        <h4>Tre åtgärdsnivåer</h4>
-        <ul><li>Driftoptimering av tider, flöden och sekvenser</li><li>Retrofit av fläktar och styrning</li><li>Aggregatbyte med livscykelkalkyl (LCC)</li></ul>
+        <ul><li>Onödigt långa drifttider</li><li>Låg verkningsgrad i värmeåtervinningen</li><li>Hög fläkteffekt, slitna filter och kanaler som behöver ses över</li></ul>
+        <h4>Åtgärder</h4>
+        <ul><li>Aggregat: driftoptimering, retrofit eller byte med livscykelkalkyl</li><li>Värmeåtervinning</li><li>Kanaler</li><li>Filter</li></ul>
         <div class="gain">Lägre fläktel och värmeförlust – utan att luftkvaliteten eller komforten försämras.</div>
       </div></div>
     </div>
+    <p class="later"><strong>Kommer senare:</strong> vatteneffektivisering, belysning, isolering och klimatskal.</p>
     <div class="note"><p><strong>Exempel från verkligheten:</strong> I ett publicerat svenskt flerbostadscase minskade värmeanvändningen med 10,9 % efter digital värmestyrning och ytterligare 10,2 % efter dynamisk injustering. Det visar vad som är möjligt i en byggnad – inte vad varje byggnad garanterat uppnår. Därför mäter vi alltid före och efter.</p></div>
   </div>
 </section>
@@ -474,7 +468,7 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
         <h3>Kontor, handel, hotell och blandfastigheter</h3>
         <p>Lokaler med sämst energiprestanda omfattas av EU:s kommande miniminivåer. Här spelar ventilation och styrning ofta en större roll än i bostäder.</p>
         <ul class="check">
-          <li>Ventilation Performance Check med koppling till OVK</li>
+          <li>Ventilationspaket med koppling till OVK</li>
           <li>Integration med befintligt fastighetssystem (BMS)</li>
           <li>Livscykelkalkyl för retrofit kontra aggregatbyte</li>
         </ul>
@@ -556,7 +550,7 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
     <details><summary>Varför börja med värmesystemet och inte med fönster eller isolering?</summary><p>Åtgärder i värmesystemet är ofta snabba, relativt billiga och påverkar komforten direkt. De ger också bättre mätdata inför större klimatskalsåtgärder – och ett balanserat system behövs ändå för att större investeringar ska ge full effekt.</p></details>
     <details><summary>Vi har värmepump, inte fjärrvärme. Är det relevant för oss?</summary><p>Ja. Låga och stabila framledningstemperaturer är ännu viktigare för en värmepumps verkningsgrad. Injustering, cirkulation och styrning ger ofta god effekt även här.</p></details>
     <details><summary>Vem äger mätdatan från styrningen?</summary><p>Det avtalas tydligt innan uppkoppling: ägande, lagring, åtkomst, cybersäkerhet och ansvar vid driftstörning. Utgångspunkten är att datan om din byggnad är din.</p></details>
-    <details><summary>Kan investeringen finansieras?</summary><p>Vi arbetar med möjligheter till finansiering och leasing så att åtgärden kan betalas med en del av besparingen. Fråga oss om vad som är aktuellt för er.</p></details>
+    <details><summary>Kan investeringen finansieras?</summary><p>Vi utreder finansierings- och leasinglösningar som ett senare steg i erbjudandet, så att ni inte behöver binda lika mycket kapital. Fråga gärna, så berättar vi hur långt arbetet har kommit.</p></details>
   </div>
 </section>
 
@@ -599,7 +593,7 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
 <footer>
   <div class="wrap">
     <div class="cols">
-      <div><h4>Åtgärdspaket</h4><ul><li><a href="#paket">Värmebalans &amp; cirkulation</a></li><li><a href="#paket">Smart värmestyrning</a></li><li><a href="#paket">Ventilation Performance Check</a></li></ul></div>
+      <div><h4>Åtgärdspaket</h4><ul><li><a href="#paket">Värmesystem &amp; styrning</a></li><li><a href="#paket">Ventilation</a></li></ul></div>
       <div><h4>Verktyg</h4><ul><li><a href="#snabbkoll">Snabbkoll</a></li><li><a href="#regler">Regelöversikt</a></li><li><a href="#faq">Vanliga frågor</a></li></ul></div>
       <div><h4>För dig som är</h4><ul><li><a href="#for-dig">Bostadsrättsförening</a></li><li><a href="#for-dig">Privat hyresvärd</a></li><li><a href="#for-dig">Allmännytta</a></li><li><a href="#for-dig">Kommersiell fastighetsägare</a></li></ul></div>
       <div><h4>Kom igång</h4><ul><li><a href="#kontakt">Boka kostnadsfri screening</a></li></ul></div>
@@ -614,8 +608,8 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
   var $ = function(id){return document.getElementById(id)};
   var form = $('calcForm');
   // Schablonintervall per paket, andel av värmeanvändningen
-  var RANGES = {A:[0.04,0.10], B:[0.03,0.08], C:[0.02,0.06]};
-  var NAMES = {A:'Värmebalans & cirkulation', B:'Smart värmestyrning', C:'Ventilation Check'};
+  var RANGES = {'1':[0.05,0.15], '2':[0.02,0.06]};
+  var NAMES = {'1':'Värmesystem & styrning', '2':'Ventilation'};
   var PRICES = {dh:1276, hp:1800, other:1300};
   var PRICE_HINTS = {
     dh:'Snitt fjärrvärme för större flerfamiljshus 2026. Ert lokala pris kan skilja mycket.',
@@ -632,7 +626,7 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
     var mwh = area*kwh/1000;
     var cost = mwh*price;
 
-    var hits = {A:0,B:0,C:0}, max = {A:0,B:0,C:0};
+    var hits = {'1':0,'2':0}, max = {'1':0,'2':0};
     form.querySelectorAll('.symptoms input').forEach(function(cb){
       max[cb.dataset.p]++; if(cb.checked) hits[cb.dataset.p]++;
     });
@@ -640,17 +634,17 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
     // Byggår påverkar potentialen i värmedistributionen
     var ageBoost = {'150':1, '140':1, '120':0.8, '90':0.6}[$('age').value];
     var score = {}, inc = [], lo = 1, hi = 1;
-    ['A','B','C'].forEach(function(p){
+    ['1','2'].forEach(function(p){
       var share = max[p] ? hits[p]/max[p] : 0;
-      // A är grundpaket och ingår alltid; B/C ingår när symptom finns
-      var base = p==='A' ? 0.5 : 0.25;
-      score[p] = Math.min(1, (base + share*(1-base)) * (p==='A' ? ageBoost : 1));
-      if(p==='A' || hits[p] > 0){
+      // Paket 1 är grundpaket och ingår alltid; paket 2 ingår när symptom finns
+      var base = p==='1' ? 0.5 : 0.25;
+      score[p] = Math.min(1, (base + share*(1-base)) * (p==='1' ? ageBoost : 1));
+      if(p==='1' || hits[p] > 0){
         inc.push(p);
         var r = RANGES[p];
         var l = r[0] + (r[1]-r[0])*share*0.4;
         var h = r[0] + (r[1]-r[0])*(0.5 + share*0.5);
-        if(p==='A'){ l*=ageBoost; h*=ageBoost; }
+        if(p==='1'){ l*=ageBoost; h*=ageBoost; }
         lo *= (1-l); hi *= (1-h);
       }
     });
@@ -659,13 +653,12 @@ footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-
 
     $('rMwh').textContent = nf.format(mwh) + ' MWh/år';
     $('rCost').textContent = nf.format(round(cost,1000)) + ' kr/år';
-    $('rPkgs').textContent = inc.join(' + ');
+    $('rPkgs').textContent = 'Paket ' + inc.join(' + ');
     $('rSave').textContent = cost>0 ? nf.format(sLo) + '–' + nf.format(sHi) + ' kr' : '–';
     $('rSaveMwh').textContent = cost>0 ? 'motsvarar ca ' + nf.format(mwh*lo) + '–' + nf.format(mwh*hi) + ' MWh (' + Math.round(lo*100) + '–' + Math.round(hi*100) + ' %) per år' : 'Fyll i yta och energianvändning';
 
-    // Paket A först – B och C sorteras efter träffar
-    var rest = ['B','C'].sort(function(a,b){return score[b]-score[a]});
-    var order = ['A'].concat(rest);
+    // Värmen först, ventilationen därefter
+    var order = ['1','2'];
     $('rPrio').innerHTML = order.map(function(p){
       return '<li><span>Paket ' + p + ' · ' + NAMES[p] + '</span><span class="meter" aria-label="Relevans ' + Math.round(score[p]*100) + ' %"><i style="width:' + Math.round(score[p]*100) + '%"></i></span></li>';
     }).join('');
