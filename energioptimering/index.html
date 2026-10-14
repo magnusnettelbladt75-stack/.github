@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Energioptimering för fastighetsägare</title>
+<meta name="description" content="Sänk värmekostnaden i flerbostadshus och lokaler. Kostnadsfri screening, tre tydliga åtgärdspaket och uppföljning med verifierad baslinje.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --a-blue:#005aa0;--a-navy:#002c5c;--a-navy-dark:#001f40;--a-yellow:#ffc222;--a-yellow-hover:#e6af1e;
+  --bg:#f4f6f8;--surface:#fff;--text:#222;--text-light:#555;--line:#dcdfe3;--link:#005aa0;
+  --green:#2e7d32;--green-bg:#e8f4e9;--blue-bg:#e5f0f9;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:130px;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Open Sans",Arial,system-ui,sans-serif;font-size:16px;line-height:1.6;padding-bottom:env(safe-area-inset-bottom,0)}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.brand{font-family:"Montserrat","Open Sans",Arial,sans-serif;margin-top:0}
+p{margin:0 0 16px;max-width:72ch}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;z-index:99;background:var(--a-yellow);color:var(--a-navy);padding:8px 16px;font-weight:700}
+:focus-visible{outline:3px solid var(--a-yellow);outline-offset:2px}
+
+/* Topp */
+.util{background:var(--a-navy-dark);color:#fff;font-size:12px;font-weight:600}
+.util .wrap{display:flex;justify-content:space-between;gap:12px;padding:8px 20px;flex-wrap:wrap;text-transform:uppercase;letter-spacing:.5px}
+.util span{opacity:.85}
+header.main{background:var(--surface);position:sticky;top:0;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.head-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;max-width:1200px;margin:0 auto}
+.brand{font-weight:900;font-size:30px;letter-spacing:-1px;color:var(--a-blue);display:flex;align-items:flex-end;gap:4px;line-height:1}
+.brand:hover{text-decoration:none}
+.brand::after{content:"";width:8px;height:8px;background:var(--a-yellow);border-radius:50%;margin-bottom:5px}
+.brand small{font-family:"Open Sans",sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;color:var(--a-navy);text-transform:uppercase;margin-left:12px;padding-left:12px;border-left:2px solid var(--line);align-self:center;order:2}
+.nav-bar{background:var(--a-blue)}
+.nav-wrap{max-width:1200px;margin:0 auto;padding:0 12px;overflow-x:auto;scrollbar-width:none}
+.nav-wrap::-webkit-scrollbar{display:none}
+nav{display:flex;gap:2px}
+nav a{white-space:nowrap;color:#fff;font-weight:700;font-size:13px;padding:13px 14px;border-bottom:4px solid transparent;text-transform:uppercase}
+nav a:hover,nav a.on{border-bottom-color:var(--a-yellow);text-decoration:none;background:rgba(0,0,0,.12)}
+
+.btn{display:inline-block;background:var(--a-blue);color:#fff;font-weight:700;padding:12px 24px;border-radius:4px;border:0;font-size:15px;cursor:pointer;text-align:center;font-family:inherit;transition:background .2s}
+.btn:hover{background:var(--a-navy);text-decoration:none}
+.btn.y{background:var(--a-yellow);color:var(--a-navy)}.btn.y:hover{background:var(--a-yellow-hover)}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}.btn.ghost:hover{background:rgba(255,255,255,.1)}
+
+/* Hero */
+.hero{background:var(--a-navy);color:#fff;position:relative;overflow:hidden;padding:56px 0 64px}
+.hero::after{content:"";position:absolute;right:-90px;top:-90px;width:380px;height:380px;border-radius:50%;border:48px solid var(--a-blue);opacity:.35}
+.hero::before{content:"";position:absolute;left:-60px;bottom:-140px;width:260px;height:260px;border-radius:50%;background:var(--a-yellow);opacity:.08}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:40px;grid-template-columns:1.25fr 1fr;align-items:center}
+.eyebrow{display:inline-block;background:var(--a-yellow);color:var(--a-navy);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.6px;padding:5px 12px;border-radius:2px;margin-bottom:16px}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.08;margin:0 0 18px;font-weight:900;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--a-yellow)}
+.hero p{font-size:18px;opacity:.92}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-left:4px solid var(--a-yellow);border-radius:4px;padding:18px}
+.stat b{display:block;font-family:"Montserrat",sans-serif;font-size:clamp(22px,3vw,30px);font-weight:900;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;opacity:.85;line-height:1.4;display:block;margin-top:6px}
+
+section{padding:64px 0}
+section.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+h2{font-size:clamp(24px,3vw,30px);line-height:1.2;margin:0 0 12px;color:var(--a-navy);font-weight:900;text-transform:uppercase}
+h2::after{content:"";display:block;width:60px;height:4px;background:var(--a-yellow);margin-top:12px}
+h3{font-size:19px;margin:0 0 10px;font-weight:800;color:var(--a-navy)}
+.lead{color:var(--text-light);margin:16px 0 32px;font-size:18px}
+ul{padding-left:22px}li{margin-bottom:6px}
+.check{list-style:none;padding:0}
+.check li{position:relative;padding-left:28px}
+.check li::before{content:"";position:absolute;left:0;top:5px;width:16px;height:16px;border-radius:50%;background:var(--green-bg);box-shadow:inset 0 0 0 2px var(--green)}
+.check li::after{content:"";position:absolute;left:5px;top:8px;width:6px;height:9px;border:solid var(--green);border-width:0 2px 2px 0;transform:rotate(45deg)}
+
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 4px rgba(0,0,0,.03)}
+.tile .bar{height:6px;background:var(--a-blue)}.tile.y .bar{background:var(--a-yellow)}
+.tile .in{padding:24px;flex:1;display:flex;flex-direction:column}
+.tile p:last-child,.tile ul:last-child{margin-bottom:0}
+.icon{width:44px;height:44px;border-radius:50%;background:var(--blue-bg);color:var(--a-blue);display:grid;place-items:center;margin-bottom:14px}
+.icon svg{width:22px;height:22px}
+.badge{display:inline-block;font-size:12px;font-weight:800;padding:4px 10px;border-radius:2px;margin-bottom:12px;background:var(--blue-bg);color:var(--a-blue);text-transform:uppercase;align-self:flex-start}
+.badge.y{background:var(--a-yellow);color:var(--a-navy)}.badge.g{background:var(--green-bg);color:var(--green)}
+.note{background:#fff9e6;border-left:6px solid var(--a-yellow);padding:16px 20px;border-radius:2px;margin:24px 0;max-width:84ch;font-size:15px}
+.note p{margin:0}
+
+/* Kalkylator */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:4px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.calc form{padding:28px;display:grid;gap:18px;align-content:start}
+.field label,.field legend{display:block;font-weight:700;color:var(--a-navy);font-size:14px;margin-bottom:6px}
+.field .hint{font-size:12px;color:var(--text-light);margin-top:4px}
+fieldset{border:0;padding:0;margin:0}
+select,input[type=number],input[type=text],input[type=email],input[type=tel],textarea{width:100%;font:inherit;font-size:15px;padding:10px 12px;border:1px solid #b9bfc7;border-radius:3px;background:#fff;color:var(--text)}
+select:focus,input:focus,textarea:focus{outline:2px solid var(--a-blue);outline-offset:0;border-color:var(--a-blue)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.symptoms{display:grid;gap:8px}
+.symptoms label{display:flex;gap:10px;align-items:flex-start;font-weight:400;color:var(--text);font-size:14px;cursor:pointer;padding:8px 10px;border:1px solid var(--line);border-radius:3px;margin:0}
+.symptoms label:hover{background:var(--bg)}
+.symptoms input{margin-top:4px;accent-color:var(--a-blue)}
+.symptoms .tag{margin-left:auto;font-size:11px;font-weight:800;color:var(--a-blue);white-space:nowrap}
+.result{background:var(--a-navy);color:#fff;padding:28px;display:flex;flex-direction:column;gap:18px}
+.result h3{color:#fff;margin:0}
+.big{font-family:"Montserrat",sans-serif;font-weight:900;font-size:clamp(28px,4vw,40px);line-height:1.1;color:var(--a-yellow);font-variant-numeric:tabular-nums}
+.kv{display:grid;grid-template-columns:1fr auto;gap:6px 16px;font-size:14px;border-top:1px solid rgba(255,255,255,.15);padding-top:14px}
+.kv span{opacity:.8}.kv b{text-align:right;font-variant-numeric:tabular-nums}
+.prio{display:grid;gap:10px;margin:0;padding:0;list-style:none;counter-reset:p}
+.prio li{counter-increment:p;display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;background:rgba(255,255,255,.06);border-radius:4px;padding:10px 12px;margin:0;font-size:14px}
+.prio li::before{content:counter(p);width:26px;height:26px;border-radius:50%;background:var(--a-blue);display:grid;place-items:center;font-weight:900;font-family:"Montserrat",sans-serif;font-size:13px}
+.prio li:first-child::before{background:var(--a-yellow);color:var(--a-navy)}
+.meter{height:6px;width:70px;background:rgba(255,255,255,.15);border-radius:3px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--a-yellow)}
+.small{font-size:12px;opacity:.75;line-height:1.5;margin:0}
+
+/* Paket */
+.pkg .in{gap:4px}
+.pkg h3{font-size:21px}
+.pkg .for{font-size:14px;color:var(--text-light);margin-bottom:12px}
+.pkg h4{font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--a-blue);margin:14px 0 6px}
+.pkg ul{font-size:15px;margin:0}
+.pkg .gain{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:14px;font-weight:600;color:var(--a-navy)}
+
+/* Steg */
+.steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));counter-reset:s;margin:0 0 32px}
+.steps div{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--a-blue);border-radius:4px;padding:20px;font-weight:800;counter-increment:s;color:var(--a-navy)}
+.steps div::before{content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--bg);color:var(--a-blue);margin-bottom:12px;font-family:"Montserrat",sans-serif;border:2px solid var(--a-blue)}
+.steps div:first-child{border-top-color:var(--a-yellow)}
+.steps span{display:block;font-weight:400;color:var(--text-light);font-size:14px;margin-top:6px;line-height:1.45}
+.steps em{display:inline-block;font-style:normal;font-size:11px;font-weight:800;text-transform:uppercase;color:var(--green);background:var(--green-bg);padding:2px 8px;border-radius:2px;margin-top:10px}
+
+/* Roller */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--a-navy);color:#fff;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+tbody tr:nth-child(even){background:var(--bg)}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:700;color:var(--a-navy);white-space:nowrap}
+
+/* Segment-flikar */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0}
+.tabs button{font:inherit;font-weight:700;font-size:14px;padding:12px 18px;border:1px solid var(--line);border-bottom:0;background:var(--bg);color:var(--a-navy);border-radius:4px 4px 0 0;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--a-navy);color:#fff;border-color:var(--a-navy)}
+.panel{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--a-navy);border-radius:0 4px 4px 4px;padding:28px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
+.panel[hidden]{display:none}
+.panel h3{font-size:22px}
+.panel aside{background:var(--bg);border-radius:4px;padding:20px}
+.panel aside h4{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--a-blue)}
+
+/* Tidslinje */
+.timeline{position:relative;display:grid;gap:18px;padding-left:28px;margin:0;list-style:none}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:3px;background:var(--line)}
+.timeline li{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:16px 20px;margin:0}
+.timeline li::before{content:"";position:absolute;left:-27px;top:20px;width:15px;height:15px;border-radius:50%;background:var(--a-blue);box-shadow:0 0 0 4px var(--bg)}
+.timeline li.now::before{background:var(--a-yellow)}
+.timeline time{display:block;font-family:"Montserrat",sans-serif;font-weight:900;color:var(--a-blue);font-size:14px;text-transform:uppercase}
+.timeline .st{font-size:11px;font-weight:800;text-transform:uppercase;padding:2px 8px;border-radius:2px;margin-left:8px;vertical-align:middle;font-family:"Open Sans",sans-serif}
+.st.ok{background:var(--green-bg);color:var(--green)}.st.prop{background:#fff3cd;color:#7a5a00}
+.timeline p{margin:6px 0 0;font-size:15px}
+
+/* Principer */
+.principles{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.principles div{border-left:4px solid var(--a-yellow);padding:4px 0 4px 16px}
+.principles b{display:block;color:var(--a-navy);font-family:"Montserrat",sans-serif;margin-bottom:4px}
+.principles p{font-size:15px;color:var(--text-light);margin:0}
+
+details{background:var(--surface);border:1px solid var(--line);border-radius:4px;margin-bottom:10px}
+summary{cursor:pointer;padding:16px 20px;font-weight:700;color:var(--a-navy)}
+summary:hover{background:var(--bg)}
+details p{padding:0 20px 18px;margin:0;color:var(--text-light)}
+
+/* Kontakt */
+.contact{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:start}
+.contact form{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--a-yellow);border-radius:4px;padding:28px;display:grid;gap:16px}
+.ok-msg{display:none;background:var(--green-bg);color:var(--green);border-radius:4px;padding:16px;font-weight:600}
+.ok-msg.show{display:block}
+
+footer{background:var(--a-navy-dark);color:#fff;padding:56px 0 36px;font-size:14px}
+footer .cols{display:grid;gap:36px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+footer h4{margin:0 0 14px;font-size:15px;font-family:"Montserrat",sans-serif;color:var(--a-yellow);text-transform:uppercase}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:8px;opacity:.9}
+footer a{color:#fff}
+footer .fine{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-top:22px;opacity:.65;font-size:12px;max-width:none}
+
+@media (max-width:900px){
+  .hero .wrap,.calc,.panel,.contact{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .head-top{padding:12px 16px}
+  .brand small{display:none}
+  .head-top .btn{padding:10px 14px;font-size:14px}
+  .row2{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .calc form,.result,.panel,.contact form{padding:20px}
+  section{padding:48px 0}
+}
+@media print{header.main{position:static}.nav-bar,.cta,.contact form{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Hoppa till innehållet</a>
+
+<div class="util"><div class="wrap"><span>För BRF, hyresvärdar, allmännytta &amp; kommersiella fastighetsägare</span><span>Kostnadsfri screening av värmesystemet</span></div></div>
+
+<header class="main">
+  <div class="head-top">
+    <a class="brand" href="#top" aria-label="Till toppen">ahlsell<small>Energioptimering</small></a>
+    <a class="btn y" href="#kontakt">Boka screening</a>
+  </div>
+  <div class="nav-bar">
+    <div class="nav-wrap">
+      <nav aria-label="Sidans innehåll">
+        <a href="#varfor">Varför nu</a>
+        <a href="#snabbkoll">Snabbkoll</a>
+        <a href="#paket">Paket</a>
+        <a href="#process">Så går det till</a>
+        <a href="#for-dig">För dig som är</a>
+        <a href="#regler">Regler</a>
+        <a href="#principer">Våra löften</a>
+        <a href="#faq">Frågor</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Energioptimering för fastigheter</span>
+      <h1>Sänk värmekostnaden – <em>börja i värmesystemet</em></h1>
+      <p>Ojämna temperaturer, gamla pumpar och manuella värmekurvor kostar pengar varje dag. Vi hjälper dig hitta de åtgärder som ger mest effekt per investerad krona – och kopplar ihop dig med rätt specialister, installatörer och material.</p>
+      <div class="cta">
+        <a class="btn y" href="#snabbkoll">Gör snabbkollen</a>
+        <a class="btn ghost" href="#paket">Se åtgärdspaketen</a>
+      </div>
+    </div>
+    <div class="stats" aria-label="Nyckeltal">
+      <div class="stat"><b>1 276 kr</b><span>per MWh – snittpris fjärrvärme för större flerfamiljshus 2026</span></div>
+      <div class="stat"><b>+4,6 %</b><span>genomsnittlig prishöjning på fjärrvärme 2025–2026</span></div>
+      <div class="stat"><b>46 %</b><span>av flerbostadslägenheterna byggdes 1951–1980</span></div>
+      <div class="stat"><b>1 okt 2026</b><span>nya regler om energideklarationer och energiexperter</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- VARFÖR NU -->
+<section id="varfor">
+  <div class="wrap">
+    <h2>Varför agera nu</h2>
+    <p class="lead">Tre krafter gör att energiarbetet inte längre kan vänta – och alla tre talar för att börja med det som redan finns i källaren.</p>
+    <div class="grid">
+      <div class="tile"><div class="bar"></div><div class="in">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+        <h3>Stigande energipriser</h3>
+        <p>Fjärrvärmen blev i snitt 4,6–4,7 % dyrare mellan 2025 och 2026, och variationen mellan lokala nät är stor. Många nät belönar dessutom låg returtemperatur och jämnt effektuttag – något ett välinjusterat system ger direkt.</p>
+      </div></div>
+      <div class="tile"><div class="bar"></div><div class="in">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Skärpta krav</h3>
+        <p>Nya svenska regler om energideklarationer gäller från 1 oktober 2026. EU:s byggnadsdirektiv (EPBD) kräver att beståndets energiprestanda förbättras över tid – för lokaler med sämst prestanda väntar miniminivåer.</p>
+      </div></div>
+      <div class="tile y"><div class="bar"></div><div class="in">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg></div>
+        <h3>Nöjdare boende</h3>
+        <p>Den bästa energiåtgärden märks inte bara på fakturan. Rätt flöde till rätt radiator betyder att ingen fryser i hörnlägenheten medan någon annan vädrar bort värmen – och att felanmälningarna minskar.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SNABBKOLL -->
+<section id="snabbkoll" class="alt">
+  <div class="wrap">
+    <h2>Snabbkoll: var finns er potential?</h2>
+    <p class="lead">Fyll i några uppgifter om fastigheten och kryssa i det ni känner igen. Du får ett indikativt besparingsintervall och en prioriteringsordning för åtgärdspaketen – på tio sekunder.</p>
+
+    <div class="calc">
+      <form id="calcForm" novalidate>
+        <div class="row2">
+          <div class="field">
+            <label for="age">Byggår</label>
+            <select id="age">
+              <option value="150">Före 1950</option>
+              <option value="140" selected>1951–1980</option>
+              <option value="120">1981–2000</option>
+              <option value="90">2001 eller senare</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="heat">Uppvärmning</label>
+            <select id="heat">
+              <option value="dh" selected>Fjärrvärme</option>
+              <option value="hp">Värmepump</option>
+              <option value="other">Annat</option>
+            </select>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="area">Uppvärmd yta (Atemp, m²)</label>
+            <input id="area" type="number" inputmode="numeric" min="100" step="100" value="5000">
+          </div>
+          <div class="field">
+            <label for="kwh">Värme, kWh/m² och år</label>
+            <input id="kwh" type="number" inputmode="numeric" min="20" max="400" step="5" value="140">
+            <div class="hint">Typvärde för byggåret – byt till värdet i er energideklaration.</div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="price">Energipris, kr/MWh</label>
+          <input id="price" type="number" inputmode="numeric" min="100" step="10" value="1276">
+          <div class="hint" id="priceHint">Snitt fjärrvärme för större flerfamiljshus 2026. Ert lokala pris kan skilja mycket.</div>
+        </div>
+        <fieldset class="field">
+          <legend>Känner ni igen något av detta?</legend>
+          <div class="symptoms">
+            <label><input type="checkbox" data-p="A"> Ojämna temperaturer eller återkommande klagomål på kyla/värme<span class="tag">A</span></label>
+            <label><input type="checkbox" data-p="A"> Cirkulationspumpar äldre än ca 10 år eller utan varvtalsstyrning<span class="tag">A</span></label>
+            <label><input type="checkbox" data-p="A"> Gamla radiatorventiler, ljud eller luft i systemet<span class="tag">A</span></label>
+            <label><input type="checkbox" data-p="A"> Hög returtemperatur eller avgift för dålig avkylning<span class="tag">A</span></label>
+            <label><input type="checkbox" data-p="B"> Värmekurvan ställs manuellt, inga inomhusgivare<span class="tag">B</span></label>
+            <label><input type="checkbox" data-p="B"> Ingen löpande uppföljning av energi per månad<span class="tag">B</span></label>
+            <label><input type="checkbox" data-p="C"> FTX/FT-aggregat äldre än ca 20 år eller går dygnet runt<span class="tag">C</span></label>
+            <label><input type="checkbox" data-p="C"> Anmärkning eller energisparförslag i senaste OVK<span class="tag">C</span></label>
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="result" aria-live="polite">
+        <h3>Ert indikativa resultat</h3>
+        <div>
+          <div class="small" style="opacity:.85">Möjlig besparing per år</div>
+          <div class="big" id="rSave">–</div>
+          <div class="small" id="rSaveMwh" style="margin-top:6px">–</div>
+        </div>
+        <div class="kv">
+          <span>Uppskattad värmeanvändning</span><b id="rMwh">–</b>
+          <span>Uppskattad värmekostnad</span><b id="rCost">–</b>
+          <span>Paket som ingår i intervallet</span><b id="rPkgs">–</b>
+        </div>
+        <div>
+          <div class="small" style="opacity:.85;margin-bottom:8px">Rekommenderad ordning</div>
+          <ol class="prio" id="rPrio"></ol>
+        </div>
+        <a class="btn y" href="#kontakt" id="rCta">Boka kostnadsfri screening</a>
+        <p class="small">Indikativt räknat på schablonintervall per paket (A 4–10 %, B 3–8 %, C 2–6 % av värmen) som justeras efter era svar. Det är ett prioriteringsstöd, inte en offert eller garanti – verklig effekt beror på systemet och fastställs först mot en uppmätt, normalårskorrigerad baslinje.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAKET -->
+<section id="paket">
+  <div class="wrap">
+    <h2>Tre paket – i rätt ordning</h2>
+    <p class="lead">Smart styrning på ett obalanserat system optimerar fel sak. Därför börjar vi med hydrauliken, lägger styrning ovanpå och tar ventilationen när grunden sitter.</p>
+    <div class="grid">
+      <div class="tile y pkg"><div class="bar"></div><div class="in">
+        <span class="badge y">Paket A · Grunden</span>
+        <h3>Värmebalans &amp; cirkulation</h3>
+        <div class="for">Bäst för fjärrvärmda flerbostadshus från 1950–1980.</div>
+        <h4>Vi letar efter</h4>
+        <ul><li>Stor temperaturspridning mellan lägenheter</li><li>Hög returtemperatur, dålig avkylning (ΔT)</li><li>Pumpar utan modern varvtalsstyrning</li><li>Gamla ventiler, luft och smuts i systemet</li></ul>
+        <h4>Åtgärder</h4>
+        <ul><li>Nya cirkulationspumpar</li><li>Injustering, injusterings- och DP-ventiler</li><li>Radiatorventiler och termostater</li><li>Avgasning, smutsavskiljning, tryckhållning</li></ul>
+        <div class="gain">Jämnare komfort, färre klagomål, lägre pumpel och bättre avkylning mot fjärrvärmenätet.</div>
+      </div></div>
+      <div class="tile pkg"><div class="bar"></div><div class="in">
+        <span class="badge">Paket B · Styrningen</span>
+        <h3>Smart värmestyrning &amp; uppföljning</h3>
+        <div class="for">När hydrauliken och givarna är kontrollerade.</div>
+        <h4>Vi letar efter</h4>
+        <ul><li>Manuellt inställda värmekurvor</li><li>Inga inomhusgivare eller larm</li><li>Ingen månatlig energiuppföljning</li></ul>
+        <h4>Åtgärder</h4>
+        <ul><li>Inomhusgivare samt fram- och returtemperatur</li><li>Uppkoppling mot befintlig reglercentral eller gateway</li><li>Väder- och prognosstyrning med larm</li><li>Baslinje, normalårskorrigering och månadsrapport</li></ul>
+        <div class="gain">Rätt temperatur i rätt tid, avvikelser som syns direkt och besparingar ni kan visa styrelsen.</div>
+      </div></div>
+      <div class="tile pkg"><div class="bar"></div><div class="in">
+        <span class="badge">Paket C · Luften</span>
+        <h3>Ventilation Performance Check</h3>
+        <div class="for">Byggnader med FTX/FT eller anmärkning i OVK.</div>
+        <h4>Vi letar efter</h4>
+        <ul><li>Onödigt långa drifttider</li><li>Låg temperaturverkningsgrad i återvinningen</li><li>Hög fläkteffekt (SFP), slitna remmar och filter</li></ul>
+        <h4>Tre åtgärdsnivåer</h4>
+        <ul><li>Driftoptimering av tider, flöden och sekvenser</li><li>Retrofit av fläktar och styrning</li><li>Aggregatbyte med livscykelkalkyl (LCC)</li></ul>
+        <div class="gain">Lägre fläktel och värmeförlust – utan att luftkvaliteten eller komforten försämras.</div>
+      </div></div>
+    </div>
+    <div class="note"><p><strong>Exempel från verkligheten:</strong> I ett publicerat svenskt flerbostadscase minskade värmeanvändningen med 10,9 % efter digital värmestyrning och ytterligare 10,2 % efter dynamisk injustering. Det visar vad som är möjligt i en byggnad – inte vad varje byggnad garanterat uppnår. Därför mäter vi alltid före och efter.</p></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="alt">
+  <div class="wrap">
+    <h2>Så går det till</h2>
+    <p class="lead">Du får en kontaktväg och ett tydligt beslutsunderlag. Vi kopplar in rätt specialist vid rätt steg – du behöver inte samordna leverantörer själv.</p>
+    <div class="steps">
+      <div>Screening<span>Digital genomgång av energidata, deklaration och OVK – för en byggnad eller hela beståndet.</span><em>Kostnadsfri</em></div>
+      <div>Prioritering<span>Vilka byggnader och åtgärder ger mest nytta per krona? Du får ett kort beslutsunderlag.</span></div>
+      <div>Inventering<span>Specialist på plats: pumpar, ventiler, temperaturer, flöden och styrning.</span></div>
+      <div>Förslag &amp; kalkyl<span>Lösning, materiallista och livscykelkalkyl med redovisade antaganden.</span></div>
+      <div>Genomförande<span>Din installatör – eller en av våra installationspartners – utför, injusterar och dokumenterar.</span></div>
+      <div>Uppföljning<span>Mätning mot normalårskorrigerad baslinje. Avvikelser åtgärdas.</span></div>
+    </div>
+    <h3>Vem gör vad?</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Roll</th><th>Ansvar</th></tr></thead>
+      <tbody>
+        <tr><td>Du som fastighetsägare</td><td>Delar underlag och fattar investeringsbeslutet – med ett tydligt underlag som går att presentera för styrelse eller ledning.</td></tr>
+        <tr><td>Ahlsell</td><td>Håller ihop processen: screening, koppling till specialister och installatörer, material, logistik och uppföljning.</td></tr>
+        <tr><td>Teknisk specialist</td><td>Inventerar, dimensionerar, väljer produkter och stödjer driftsättningen.</td></tr>
+        <tr><td>Installatör</td><td>Verifierar förutsättningarna, installerar, spolar, injusterar och dokumenterar.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- FÖR DIG SOM ÄR -->
+<section id="for-dig">
+  <div class="wrap">
+    <h2>För dig som är …</h2>
+    <p class="lead">Samma tekniska grund – men olika beslutsvägar. Vi anpassar underlaget efter vem som ska fatta beslutet.</p>
+    <div class="tabs" role="tablist" aria-label="Typ av fastighetsägare">
+      <button role="tab" id="t-brf" aria-controls="p-brf" aria-selected="true">Bostadsrättsförening</button>
+      <button role="tab" id="t-priv" aria-controls="p-priv" aria-selected="false" tabindex="-1">Privat hyresvärd</button>
+      <button role="tab" id="t-allm" aria-controls="p-allm" aria-selected="false" tabindex="-1">Allmännytta</button>
+      <button role="tab" id="t-kom" aria-controls="p-kom" aria-selected="false" tabindex="-1">Kommersiell fastighet</button>
+    </div>
+    <div class="panel" role="tabpanel" id="p-brf" aria-labelledby="t-brf">
+      <div>
+        <h3>Ett underlag styrelsen kan fatta beslut på</h3>
+        <p>Bostadsrättsföreningar äger 41 % av lägenheterna i flerbostadshus. Ofta sitter styrelsen med begränsad tid och teknisk kunskap – och med en underhållsplan som ändå ska följas.</p>
+        <ul class="check">
+          <li>Sammanfattning på en sida: åtgärd, kostnad, återbetalning och komfortnytta</li>
+          <li>Samordnas med underhållsplanen så att rätt saker byts samtidigt</li>
+          <li>Vi jobbar gärna via er tekniska förvaltare</li>
+        </ul>
+      </div>
+      <aside><h4>Typiska vinster</h4><p>Färre felanmälningar, lägre avgiftstryck och en tydlig berättelse till medlemmarna om vad som gjorts.</p></aside>
+    </div>
+    <div class="panel" role="tabpanel" id="p-priv" aria-labelledby="t-priv" hidden>
+      <div>
+        <h3>Standardisera över hela portföljen</h3>
+        <p>Svenska aktiebolag äger 25 % av lägenheterna i flerbostadshus. Har ni flera likartade fastigheter kan en lyckad åtgärd i en byggnad snabbt rullas ut i nästa.</p>
+        <ul class="check">
+          <li>Screening av hela beståndet – prioritera byggnaderna med högst potential</li>
+          <li>Pilot i en byggnad, mätt resultat, sedan utrullning</li>
+          <li>Projektpris, lager- och leveransplan för hela programmet</li>
+        </ul>
+      </div>
+      <aside><h4>Typiska vinster</h4><p>Lägre driftnetto, förbättrade energiklasser i portföljen och underlag till hållbarhetsrapportering.</p></aside>
+    </div>
+    <div class="panel" role="tabpanel" id="p-allm" aria-labelledby="t-allm" hidden>
+      <div>
+        <h3>Stora bestånd från rekordåren</h3>
+        <p>Allmännyttan äger 25 % av lägenheterna i flerbostadshus – och 64 % av dem är byggda 1951–1980, precis där värmesystemen ofta har mest att ge.</p>
+        <ul class="check">
+          <li>Upplägg som fungerar inom ramen för offentlig upphandling</li>
+          <li>Standardiserade åtgärdspaket som går att återanvända mellan områden</li>
+          <li>Transparenta beräkningsantaganden och gemensam uppföljning</li>
+        </ul>
+      </div>
+      <aside><h4>Typiska vinster</h4><p>Mätbara steg mot energimål, bättre inomhusklimat för hyresgästerna och lägre effektuttag.</p></aside>
+    </div>
+    <div class="panel" role="tabpanel" id="p-kom" aria-labelledby="t-kom" hidden>
+      <div>
+        <h3>Kontor, handel, hotell och blandfastigheter</h3>
+        <p>Lokaler med sämst energiprestanda omfattas av EU:s kommande miniminivåer. Här spelar ventilation och styrning ofta en större roll än i bostäder.</p>
+        <ul class="check">
+          <li>Ventilation Performance Check med koppling till OVK</li>
+          <li>Integration med befintligt fastighetssystem (BMS)</li>
+          <li>Livscykelkalkyl för retrofit kontra aggregatbyte</li>
+        </ul>
+      </div>
+      <aside><h4>Typiska vinster</h4><p>Bättre energiklass och fastighetsvärde, lägre driftskostnad och nöjdare hyresgäster.</p></aside>
+    </div>
+  </div>
+</section>
+
+<!-- REGLER -->
+<section id="regler" class="alt">
+  <div class="wrap">
+    <h2>Regler att ha koll på</h2>
+    <p class="lead">En kort översikt över krav som påverkar fastighetsägare. Kontrollera alltid vad som gäller för just er byggnad.</p>
+    <div class="grid" style="align-items:start">
+      <ol class="timeline">
+        <li class="now"><time datetime="2026-10-01">1 oktober 2026 <span class="st ok">Gäller</span></time><p>Nya svenska regler om energihushållning, energideklarationer och energiexperter börjar gälla.</p></li>
+        <li><time>2027 <span class="st prop">Föreslaget</span></time><p>Föreslagen lag: energikartläggning minst vart fjärde år för företag med 2,78–23,6 GWh årlig energianvändning. Större företag föreslås behöva energi- eller miljöledningssystem. Ännu inte beslutad.</p></li>
+        <li><time datetime="2028-07-01">1 juli 2028 <span class="st ok">Gäller</span></time><p>Sista dag för energideklaration för offentliga byggnader som inte omfattats tidigare.</p></li>
+        <li><time>2030–2050 <span class="st prop">EU-krav</span></time><p>EPBD: lokaler med sämst energiprestanda ska förbättras stegvis. För bostäder gäller kravet beståndets genomsnitt – inte varje enskilt hus.</p></li>
+      </ol>
+      <div class="tile"><div class="bar"></div><div class="in">
+        <h3>OVK – en bra startpunkt</h3>
+        <p>Obligatorisk ventilationskontroll görs normalt</p>
+        <ul>
+          <li><strong>vart 3:e år</strong> i flerbostadshus och kontor med FT/FTX</li>
+          <li><strong>vart 6:e år</strong> i motsvarande byggnader med S/F/FX</li>
+        </ul>
+        <p>Vid återkommande OVK ska möjliga energisparåtgärder undersökas. Har ni ett färskt protokoll är det ett utmärkt underlag för screeningen.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPER -->
+<section id="principer">
+  <div class="wrap">
+    <h2>Ärliga besparingar – våra löften</h2>
+    <p class="lead">Branschen är full av "upp till"-procent. Vi tror att förtroende byggs med siffror som håller.</p>
+    <div class="principles">
+      <div><b>Baslinje först</b><p>Vi mäter nuläget och normalårskorrigerar innan vi lovar något.</p></div>
+      <div><b>Intervall, inte löften</b><p>Besparingar redovisas som intervall med synliga antaganden.</p></div>
+      <div><b>Hela systemet</b><p>Pumpbyte utan injustering eller styrning utan fungerande givare ger fel resultat. Vi tittar på helheten.</p></div>
+      <div><b>Komforten skyddas</b><p>Ingen åtgärd får försämra inomhusklimat eller luftkvalitet.</p></div>
+      <div><b>Tydliga roller</b><p>Specialisten väljer teknik, installatören utför, du fattar beslutet – och alla vet det från start.</p></div>
+      <div><b>Uppföljning på riktigt</b><p>Värmeresultat behöver en eldningssäsong. Tidiga siffror märks som preliminära.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FÖRBERED -->
+<section class="alt">
+  <div class="wrap">
+    <div class="grid" style="align-items:center">
+      <div>
+        <h2>Förbered screeningen</h2>
+        <p class="lead" style="margin-bottom:0">Ju mer underlag, desto skarpare analys. Men inget av detta är ett krav för att komma igång – vi hjälper gärna till att ta fram det som saknas.</p>
+      </div>
+      <ul class="check">
+        <li>Senaste energideklarationen</li>
+        <li>Senaste OVK-protokollet</li>
+        <li>Energifakturor för 12–36 månader (gärna med effekt och returtemperatur)</li>
+        <li>Driftkort eller uppgifter om pumpar och reglercentral</li>
+        <li>Underhållsplan och kända komfortproblem</li>
+        <li>Ritningar eller systemschema om sådana finns</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <h2>Vanliga frågor</h2>
+    <p class="lead">Hittar du inte svaret? Skriv till oss i formuläret nedan.</p>
+    <details><summary>Vad kostar screeningen?</summary><p>Den digitala screeningen är kostnadsfri och utan förpliktelser. Inventering på plats, projektering och installation offereras separat innan något beställs.</p></details>
+    <details><summary>Måste vi använda en viss installatör?</summary><p>Nej. Har ni en installatör ni trivs med tar vi gärna in dem i processen. Saknar ni någon kan vi föreslå installationspartners som kan injustering, dokumentation och driftsättning – inte bara montage.</p></details>
+    <details><summary>Hur mycket kan vi spara?</summary><p>Det beror på byggnaden. Snabbkollen ovan ger ett indikativt intervall, men den verkliga besparingen fastställs först när vi har en uppmätt baslinje. Vi lämnar aldrig generella besparingsgarantier utan verifierade data.</p></details>
+    <details><summary>Varför börja med värmesystemet och inte med fönster eller isolering?</summary><p>Åtgärder i värmesystemet är ofta snabba, relativt billiga och påverkar komforten direkt. De ger också bättre mätdata inför större klimatskalsåtgärder – och ett balanserat system behövs ändå för att större investeringar ska ge full effekt.</p></details>
+    <details><summary>Vi har värmepump, inte fjärrvärme. Är det relevant för oss?</summary><p>Ja. Låga och stabila framledningstemperaturer är ännu viktigare för en värmepumps verkningsgrad. Injustering, cirkulation och styrning ger ofta god effekt även här.</p></details>
+    <details><summary>Vem äger mätdatan från styrningen?</summary><p>Det avtalas tydligt innan uppkoppling: ägande, lagring, åtkomst, cybersäkerhet och ansvar vid driftstörning. Utgångspunkten är att datan om din byggnad är din.</p></details>
+    <details><summary>Kan investeringen finansieras?</summary><p>Vi arbetar med möjligheter till finansiering och leasing så att åtgärden kan betalas med en del av besparingen. Fråga oss om vad som är aktuellt för er.</p></details>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="alt">
+  <div class="wrap contact">
+    <div>
+      <h2>Boka kostnadsfri screening</h2>
+      <p class="lead">Berätta kort om fastigheten så återkommer en av våra fastighetsspecialister med förslag på nästa steg.</p>
+      <ul class="check">
+        <li>Ingen kostnad och inga förpliktelser</li>
+        <li>En kontaktperson genom hela processen</li>
+        <li>Ett beslutsunderlag du kan ta till styrelse eller ledning</li>
+      </ul>
+    </div>
+    <form id="contactForm">
+      <div class="row2">
+        <div class="field"><label for="c-name">Namn</label><input id="c-name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="c-org">Organisation / förening</label><input id="c-org" type="text" autocomplete="organization" required></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="c-mail">E-post</label><input id="c-mail" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="c-tel">Telefon</label><input id="c-tel" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="c-seg">Jag representerar</label>
+          <select id="c-seg"><option>Bostadsrättsförening</option><option>Privat hyresvärd</option><option>Allmännyttigt bostadsbolag</option><option>Kommersiell fastighetsägare</option><option>Förvaltare</option><option>Annat</option></select></div>
+        <div class="field"><label for="c-n">Antal byggnader</label>
+          <select id="c-n"><option>1</option><option>2–5</option><option>6–20</option><option>Fler än 20</option></select></div>
+      </div>
+      <div class="field"><label for="c-msg">Berätta gärna mer</label><textarea id="c-msg" rows="4" placeholder="T.ex. byggår, uppvärmning och vilka problem ni upplever"></textarea></div>
+      <input type="hidden" id="c-calc">
+      <button class="btn y" type="submit">Skicka förfrågan</button>
+      <div class="ok-msg" id="okMsg" role="status">Tack! Din förfrågan är registrerad. Vi hör av oss inom två arbetsdagar.</div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><h4>Åtgärdspaket</h4><ul><li><a href="#paket">Värmebalans &amp; cirkulation</a></li><li><a href="#paket">Smart värmestyrning</a></li><li><a href="#paket">Ventilation Performance Check</a></li></ul></div>
+      <div><h4>Verktyg</h4><ul><li><a href="#snabbkoll">Snabbkoll</a></li><li><a href="#regler">Regelöversikt</a></li><li><a href="#faq">Vanliga frågor</a></li></ul></div>
+      <div><h4>För dig som är</h4><ul><li><a href="#for-dig">Bostadsrättsförening</a></li><li><a href="#for-dig">Privat hyresvärd</a></li><li><a href="#for-dig">Allmännytta</a></li><li><a href="#for-dig">Kommersiell fastighetsägare</a></li></ul></div>
+      <div><h4>Kom igång</h4><ul><li><a href="#kontakt">Boka kostnadsfri screening</a></li></ul></div>
+    </div>
+    <p class="fine">Källor: SCB (bostadsbestånd och ägarfördelning), Boverket och Energimyndigheten (regler, EPBD, OVK och energikartläggning), Energiföretagen (fjärrvärmepriser 2026). Leverantörers besparingsuppgifter är case- eller leverantörspåståenden och verifieras per projekt. Snabbkollens resultat är indikativa och utgör inte en offert eller garanti.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nf = new Intl.NumberFormat('sv-SE',{maximumFractionDigits:0});
+  var $ = function(id){return document.getElementById(id)};
+  var form = $('calcForm');
+  // Schablonintervall per paket, andel av värmeanvändningen
+  var RANGES = {A:[0.04,0.10], B:[0.03,0.08], C:[0.02,0.06]};
+  var NAMES = {A:'Värmebalans & cirkulation', B:'Smart värmestyrning', C:'Ventilation Check'};
+  var PRICES = {dh:1276, hp:1800, other:1300};
+  var PRICE_HINTS = {
+    dh:'Snitt fjärrvärme för större flerfamiljshus 2026. Ert lokala pris kan skilja mycket.',
+    hp:'Ungefärligt pris per MWh levererad värme med värmepump. Byt till ert eget värde.',
+    other:'Ange ert genomsnittliga pris per MWh värme.'
+  };
+
+  function round(n, step){ return Math.round(n/step)*step; }
+
+  function calc(){
+    var area = Math.max(0, +$('area').value || 0);
+    var kwh = Math.max(0, +$('kwh').value || 0);
+    var price = Math.max(0, +$('price').value || 0);
+    var mwh = area*kwh/1000;
+    var cost = mwh*price;
+
+    var hits = {A:0,B:0,C:0}, max = {A:0,B:0,C:0};
+    form.querySelectorAll('.symptoms input').forEach(function(cb){
+      max[cb.dataset.p]++; if(cb.checked) hits[cb.dataset.p]++;
+    });
+
+    // Byggår påverkar potentialen i värmedistributionen
+    var ageBoost = {'150':1, '140':1, '120':0.8, '90':0.6}[$('age').value];
+    var score = {}, inc = [], lo = 1, hi = 1;
+    ['A','B','C'].forEach(function(p){
+      var share = max[p] ? hits[p]/max[p] : 0;
+      // A är grundpaket och ingår alltid; B/C ingår när symptom finns
+      var base = p==='A' ? 0.5 : 0.25;
+      score[p] = Math.min(1, (base + share*(1-base)) * (p==='A' ? ageBoost : 1));
+      if(p==='A' || hits[p] > 0){
+        inc.push(p);
+        var r = RANGES[p];
+        var l = r[0] + (r[1]-r[0])*share*0.4;
+        var h = r[0] + (r[1]-r[0])*(0.5 + share*0.5);
+        if(p==='A'){ l*=ageBoost; h*=ageBoost; }
+        lo *= (1-l); hi *= (1-h);
+      }
+    });
+    lo = 1-lo; hi = 1-hi;
+    var sLo = round(cost*lo, 1000), sHi = round(cost*hi, 1000);
+
+    $('rMwh').textContent = nf.format(mwh) + ' MWh/år';
+    $('rCost').textContent = nf.format(round(cost,1000)) + ' kr/år';
+    $('rPkgs').textContent = inc.join(' + ');
+    $('rSave').textContent = cost>0 ? nf.format(sLo) + '–' + nf.format(sHi) + ' kr' : '–';
+    $('rSaveMwh').textContent = cost>0 ? 'motsvarar ca ' + nf.format(mwh*lo) + '–' + nf.format(mwh*hi) + ' MWh (' + Math.round(lo*100) + '–' + Math.round(hi*100) + ' %) per år' : 'Fyll i yta och energianvändning';
+
+    // Paket A först – B och C sorteras efter träffar
+    var rest = ['B','C'].sort(function(a,b){return score[b]-score[a]});
+    var order = ['A'].concat(rest);
+    $('rPrio').innerHTML = order.map(function(p){
+      return '<li><span>Paket ' + p + ' · ' + NAMES[p] + '</span><span class="meter" aria-label="Relevans ' + Math.round(score[p]*100) + ' %"><i style="width:' + Math.round(score[p]*100) + '%"></i></span></li>';
+    }).join('');
+
+    $('c-calc').value = 'Snabbkoll: ' + nf.format(area) + ' m², ' + kwh + ' kWh/m², ' + price + ' kr/MWh, paket ' + inc.join('+') + ', ' + nf.format(sLo) + '–' + nf.format(sHi) + ' kr/år';
+  }
+
+  $('age').addEventListener('change', function(){ $('kwh').value = this.value; calc(); });
+  $('heat').addEventListener('change', function(){
+    $('price').value = PRICES[this.value];
+    $('priceHint').textContent = PRICE_HINTS[this.value];
+    calc();
+  });
+  form.addEventListener('input', calc);
+  form.addEventListener('submit', function(e){ e.preventDefault(); });
+  calc();
+
+  // Flikar
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role=tab]'));
+  function select(t){
+    tabs.forEach(function(x){
+      var on = x===t;
+      x.setAttribute('aria-selected', on);
+      x.tabIndex = on ? 0 : -1;
+      $(x.getAttribute('aria-controls')).hidden = !on;
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click', function(){ select(t); });
+    t.addEventListener('keydown', function(e){
+      var d = e.key==='ArrowRight' ? 1 : e.key==='ArrowLeft' ? -1 : 0;
+      if(!d) return;
+      var n = tabs[(i+d+tabs.length)%tabs.length]; select(n); n.focus();
+    });
+  });
+  // Förval av segment i formuläret utifrån vald flik
+  var segMap = {'t-brf':0,'t-priv':1,'t-allm':2,'t-kom':3};
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ $('c-seg').selectedIndex = segMap[t.id]; }); });
+
+  // Kontaktformulär – koppla till CRM/backend innan publicering
+  $('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!this.checkValidity()){ this.reportValidity(); return; }
+    $('okMsg').classList.add('show');
+    this.querySelector('button[type=submit]').disabled = true;
+  });
+
+  // Markera aktiv sektion i navigeringen
+  var links = document.querySelectorAll('nav a');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href')==='#'+en.target.id); });
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    links.forEach(function(a){ var s = document.querySelector(a.getAttribute('href')); if(s) io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
