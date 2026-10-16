@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MinApp</string>
+    <string name="counter_label">Antal klick:</string>
+    <string name="increment">Klicka</string>
+    <string name="reset">Nollställ</string>
+</resources>
